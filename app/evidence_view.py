@@ -125,7 +125,7 @@ def render_operations():
 
 def render_assumptions(cond, kpi):
     st.markdown("#### 투자자 조건 점검 (현재 조건)")
-    yearly = data.load_year(cond.alt, cond.scen).set_index("year")
+    yearly = data.year_for(cond.alt, cond.scen, tuple(tuple(p) for p in cond.relocations)).set_index("year")
     cov = float(yearly.loc[2027, "coverage"]) if 2027 in yearly.index else float("nan")
     ebitda = kpi["ebitda_positive_year"]
     rows = [
@@ -153,3 +153,74 @@ def render_assumptions(cond, kpi):
     with st.expander("데이터 결함 처리 로그 요약 (outputs/data_issues_log.csv)"):
         log = data.load_output("data_issues_log.csv")
         st.dataframe(log, hide_index=True, width="stretch")
+
+
+BEFORE_NAME = {"A": "A", "B": "B", "B2": "B2", "C15": "C", "D15": "D"}
+
+
+def _unit_and_ontime(cond):
+    """현재 조건의 2027년 주문당 운영비(원/건, 2027년 단가)와 2031년 정시율(주문 가중)."""
+    relocations = tuple(tuple(pair) for pair in cond.relocations)
+    plan = data.plan_for(cond.alt, relocations)
+    ops = data.ops_for(cond.alt, data.load_effective_config()["finance"]["default_scenario"], relocations)
+    excluded = [site for site in cond.excluded_sites if site in set(plan["site_id"])]
+    plan, ops = scenario.exclude_sites(plan, ops, excluded)
+    cost = ops[list(scenario.LABOR_COLUMNS)].sum(axis=1) * cond.cost_factor
+    y27 = ops["year"].eq(2027)
+    unit = float((cost[y27] * ops.loc[y27, "orders_per_day"]).sum() / ops.loc[y27, "orders_per_day"].sum())
+    y31 = ops["year"].eq(2031)
+    late = float((ops.loc[y31, "late_rate"] * ops.loc[y31, "orders_per_day"]).sum() / ops.loc[y31, "orders_per_day"].sum())
+    hubs = int(plan["open_year"].le(2027).sum())
+    return hubs, unit, 1 - late
+
+
+def _row_values(cond):
+    _, base = scenario.run(replace(cond, scen="base"))
+    yearly = data.year_for(cond.alt, "base", tuple(tuple(p) for p in cond.relocations)).set_index("year")
+    _, low = scenario.run(replace(cond, scen="low"))
+    if "error" in base or "error" in low:
+        return None
+    hubs, unit, ontime = _unit_and_ontime(cond)
+    return {"거점 수 2027년": f"{hubs}곳", "주문당 운영비(원/건, 2027년)": f"{unit:,.0f}원",
+            "정시율(2031년)": f"{ontime:.1%}", "NPV(기본 시장)": f"{base['npv_eok']:,.0f}억",
+            "최대 자금(저성장)": f"{low['max_funding_eok']:,.0f}억" + (" ✓" if low["max_funding_eok"] <= LIMIT_EOK else " (한도 초과)"),
+            "EBITDA 흑자 전환": str(base["ebitda_positive_year"]),
+            "커버리지 2027년": f"{float(yearly.loc[2027, 'coverage']):.1%}",
+            "하루 주문 2031년": f"{float(yearly.loc[2031, 'orders_per_day']):,.0f}건",
+            "놓친 주문 2036년(하루)": f"{float(yearly.loc[2036, 'lost_orders_per_day']):,.0f}건"}
+
+
+def render_condition_table(cond):
+    """조건을 바꾸면 다시 계산되는 핵심 지표표: 1차 · 시뮬레이션 기준(v3) · 현재 조건."""
+    st.markdown("#### 조건 반영 결과표")
+    reference = scenario.Conditions(alt=cond.alt, scen="base")
+    current = _row_values(cond)
+    baseline = _row_values(reference)
+    if current is None or baseline is None:
+        st.error("결과표 계산을 중단했습니다.")
+        return
+    before = data.load_output("feedback_compare_v3.csv")
+    before = before[(before.alternative.eq(BEFORE_NAME[cond.alt])) & (before.phase.eq("before"))]
+    first = {}
+    if not before.empty:
+        b = before.iloc[0]
+        first = {"거점 수 2027년": f"{int(b.hubs_2027)}곳", "주문당 운영비(원/건, 2027년)": f"{b.cost_per_order_krw:,.0f}원",
+                 "정시율(2031년)": f"{b.on_time:.1%}", "NPV(기본 시장)": f"{b.npv_base_eok:,.0f}억",
+                 "최대 자금(저성장)": f"{b.max_funding_low_mid_eok:,.0f}억", "EBITDA 흑자 전환": str(b.ebitda_positive_year),
+                 "커버리지 2027년": f"{b.coverage_2027:.1%}"}
+    table = pd.DataFrame({"항목": list(current),
+                          f"1차(이동시간 고정, {BEFORE_NAME[cond.alt]})": [first.get(k, "-") for k in current],
+                          "시뮬레이션 기준(v3)": [baseline[k] for k in current],
+                          "현재 조건": [current[k] for k in current]})
+    st.dataframe(table, hide_index=True, width="stretch")
+    st.caption("NPV는 기본 시장, 최대 자금은 시장 저성장 기준(투자자 한도 500억). 현재 조건 = 왼쪽의 할인율·인건비 충격·운영비 배수·거점 제외를 적용한 값. "
+               "1차는 시뮬레이션 반영 전(이동시간 고정) 결과이며, 운영비·정시율은 버전별 집계 기준.")
+
+    st.markdown("#### 대안별 결과 — 현재 조건을 다섯 대안에 똑같이 적용")
+    rows = {}
+    for alt in data.load_alternatives():
+        values = _row_values(replace(cond, alt=alt, excluded_sites=[] if alt != cond.alt else cond.excluded_sites,
+                                     relocations=() if alt != cond.alt else cond.relocations))
+        if values:
+            rows[f"{alt}안" + (" (선택)" if alt == cond.alt else "")] = values
+    st.dataframe(pd.DataFrame(rows).rename_axis("항목").reset_index(), hide_index=True, width="stretch")

@@ -102,6 +102,19 @@ def reset_conditions(defaults):
 
 def clear_excluded_sites():
     st.session_state["excluded_sites"] = []
+    st.session_state["relocations"] = []
+
+
+def add_relocation():
+    source, target = st.session_state.get("reloc_from"), st.session_state.get("reloc_to")
+    if source and target:
+        pairs = [list(pair) for pair in st.session_state.get("relocations", []) if pair[0] != source]
+        pairs.append([source, target])
+        st.session_state["relocations"] = pairs
+
+
+def clear_relocations():
+    st.session_state["relocations"] = []
 
 
 def metric_card(column, key, label, value, reference, *, year=False, smaller_is_better=False):
@@ -137,7 +150,8 @@ def main():
     defaults = {"condition_alt": default.alt, "condition_scen": default.scen,
                 "discount_percent": default.discount_rate * PERCENT,
                 "w1_on": default.w1_on, "w1_percent": default.w1_rate * PERCENT,
-                "excluded_sites": default.excluded_sites, "cost_factor": default.cost_factor}
+                "excluded_sites": default.excluded_sites, "cost_factor": default.cost_factor,
+                "annual_cut_percent": default.annual_cut * PERCENT, "relocations": []}
     for key, value in defaults.items():
         if key not in st.session_state:
             st.session_state[key] = list(value) if isinstance(value, list) else value
@@ -164,12 +178,32 @@ def main():
                                 key="cost_factor", format="%.2f",
                                 help="1.00 = 시뮬레이션 기반 강건 운영비(15분 반경 5,642원/건, 2027년 단가)")
         st.caption(f"적용 ≈ {5642 * cost_factor:,.0f}원/건 · 손익분기(B): 자금 500억 5,319원(×0.94), NPV 0 4,817원(×0.85)")
+        annual_cut = st.slider("연간 운영비 개선율 (%/년, 가설)", min_value=0.0, max_value=5.0, step=0.5,
+                               key="annual_cut_percent", format="%.1f%%",
+                               help="2028년부터 매년 라이더·피커 주문당 비용이 이 비율만큼 누적 감소(배차·인력 운영 학습 효과 가정)")
+        st.caption("B 기준: 매년 1% → EBITDA 2030년 흑자·자금 한도 충족, 매년 3% → NPV 흑자")
         st.divider()
         plan = data.load_plan(alt)
         sites = data.load_sites().set_index("site_id")
         labels = {site: f"{site} · {sites.loc[site, 'gu']} {sites.loc[site, 'dong']}" for site in plan["site_id"]}
         excluded = st.multiselect("후보지 제외", options=plan["site_id"].tolist(), key="excluded_sites",
                                   format_func=labels.__getitem__, placeholder="제외할 거점을 선택하세요")
+        with st.expander("거점 이전 시뮬레이션", expanded=bool(st.session_state.get("relocations"))):
+            relocs = tuple(tuple(pair) for pair in st.session_state.get("relocations", []))
+            current_plan = data.plan_for(alt, relocs)
+            cands = data.candidate_sites().set_index("site_id")
+            used = set(current_plan["site_id"])
+            free = [site for site in cands.index if site not in used]
+            st.selectbox("옮길 거점", current_plan["site_id"].tolist(), key="reloc_from",
+                         format_func=lambda s: f"{s} · {cands.loc[s, 'gu']} {cands.loc[s, 'dong']} · {cands.loc[s, 'hub_type']}형")
+            st.selectbox("이전할 후보지", free, key="reloc_to",
+                         format_func=lambda s: (f"{s} · {cands.loc[s, 'gu']} {cands.loc[s, 'dong']} · {cands.loc[s, 'hub_type']}형 · "
+                                                f"월세 {cands.loc[s, 'monthly_rent_krw'] / 1e4:,.0f}만 · {int(cands.loc[s, 'available_from_year'])}년~"))
+            st.button("이전 적용", key="apply_relocation", on_click=add_relocation, width="stretch")
+            if relocs:
+                st.caption("적용 중: " + " · ".join(f"{a} → {b}" for a, b in relocs))
+                st.button("이전 초기화", key="clear_relocation", on_click=clear_relocations, width="stretch")
+            st.caption("이전하면 반경 15분·처리 상한 기준으로 동 배정과 운영을 엔진이 다시 계산한다. 이전지는 원래 개점 연도와 입주 가능 연도 중 늦은 해에 연다.")
         st.button("기준으로 되돌리기", key="reset_conditions", on_click=reset_conditions,
                   args=(defaults,), width="stretch")
         st.html(f'<div class="nm-footer">{escape(LIMITATION)}</div>')
@@ -186,7 +220,8 @@ def main():
             st.toggle("발표 모드", key="presentation_mode")
     cond = scenario.Conditions(alt=alt, scen=scen, discount_rate=discount / PERCENT,
                                w1_on=w1_on, w1_rate=w1 / PERCENT, excluded_sites=list(excluded),
-                               cost_factor=float(cost_factor))
+                               cost_factor=float(cost_factor), annual_cut=float(annual_cut) / PERCENT,
+                               relocations=tuple(tuple(pair) for pair in st.session_state.get("relocations", [])))
     annual, kpi = scenario.run(cond)
     if annual is None or "error" in kpi:
         st.error(f"재무 계산을 중단했습니다: {kpi.get('error', '계산 결과가 없습니다.')}")
@@ -200,6 +235,8 @@ def main():
     suffix = f" · 인건비 +{w1:g}%" if w1_on else ""
     suffix += f" · 거점 {len(excluded)}곳 제외" if excluded else ""
     suffix += f" · 운영비 ×{cost_factor:.2f}" if cost_factor != 1 else ""
+    suffix += f" · 운영비 매년 −{annual_cut:g}%" if annual_cut else ""
+    suffix += " · 이전 " + ", ".join(f"{a}→{b}" for a, b in cond.relocations) if cond.relocations else ""
     summary = (f"대안 {alt} · {scen} 시장 · 할인율 {discount:g}%{suffix} → "
                f"NPV {kpi['npv_eok']:,.2f}억 원, 기준 대비 {delta:+,.2f}억 원")
     st.html(f'<div class="nm-summary">{escape(summary)}</div>')
@@ -225,6 +262,8 @@ def main():
     funding_text = f"자금 한도 {limit_eok:,.0f}억 {'충족' if funding_ok else '초과'}"
     ebitda_text = f"{deadline}년까지 EBITDA 흑자 {'달성' if ebitda_ok else '미달'}"
     st.html(badge(funding_text, funding_ok) + badge(ebitda_text, ebitda_ok))
+    with st.container(key="glass_condition_table"):
+        evidence_view.render_condition_table(cond)
     changes_column, history_column = st.columns([3, 1.4], gap="large")
     with changes_column:
         demo_controls.render_changes(cond, base, kpi)

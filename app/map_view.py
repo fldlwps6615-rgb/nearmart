@@ -49,18 +49,16 @@ def _dong_tooltip(properties, site, orders, delivery):
 
 
 @st.cache_data(show_spinner=False)
-def prepare_map(alt, year, excluded_sites=()):
-    assignment = data.load_assignment(alt)
+def prepare_map(alt, year, excluded_sites=(), relocations=()):
+    assignment = data.assignment_for(alt, relocations)
     if year not in assignment_years(alt):
         raise ValueError(f"배정표에 없는 연도입니다: {year}")
     current = assignment.loc[assignment["year"].eq(year)].copy()
     if current["adm_cd2"].duplicated().any():
         raise ValueError("선택 연도의 행정동 배정이 중복됩니다.")
     current["site_id"] = current["site_id"].fillna("")
-    plan = data.load_plan(alt)
-    excluded = set(excluded_sites)
-    if excluded - set(plan["site_id"]):
-        raise ValueError(f"계획에 없는 제외 거점: {sorted(excluded - set(plan['site_id']))}")
+    plan = data.plan_for(alt, relocations)
+    excluded = set(excluded_sites) & set(plan["site_id"])
     closing = pd.to_numeric(plan["close_year"], errors="raise")
     active = plan.loc[plan["open_year"].le(year) & (closing.isna() | closing.gt(year))].copy()
     assigned_sites = set(current.loc[current["site_id"].ne(""), "site_id"])
@@ -70,6 +68,7 @@ def prepare_map(alt, year, excluded_sites=()):
     serviced = current.loc[current["site_id"].isin(retained["site_id"])].copy()
     site_colors = {site: list(PALETTE[index % len(PALETTE)])
                    for index, site in enumerate(sorted(plan["site_id"]))}
+    moved = {row.site_id for row in plan.itertuples() if "이전" in str(row.note)}
     geo = rounded_geo()
     geo_codes = [feature["properties"]["adm_cd2"] for feature in geo["features"]]
     if len(set(geo_codes)) != len(geo_codes) or set(current["adm_cd2"]) != set(geo_codes):
@@ -102,6 +101,7 @@ def prepare_map(alt, year, excluded_sites=()):
         dong_count = int(totals.loc[site, "dong_count"]) if site in totals.index else 0
         orders = float(totals.loc[site, "orders_per_day"]) if site in totals.index else 0.0
         status = "\n제외한 거점 · 수요 재배정 없음" if site in excluded else ""
+        status += f"\n{row.note}" if site in moved else ""
         tip = (f"{escape(site)} · {escape(row.hub_type)}형\n{escape(str(detail['gu']))} {escape(str(detail['dong']))}"
                f"\n개점 연도: {int(row.open_year)}년\n{'제외 전 ' if site in excluded else ''}담당 동: {dong_count:,}개"
                f"\n하루 주문 합계: {orders:,.2f}건{status}")
@@ -146,13 +146,16 @@ def render(cond, *, height=620, key="network_assignment_map"):
     year = st.select_slider("배정 기준 연도", options=years, value=min(years),
                             key=f"map_year_{cond.alt}")
     try:
-        prepared = prepare_map(cond.alt, year, tuple(sorted(cond.excluded_sites)))
+        prepared = prepare_map(cond.alt, year, tuple(sorted(cond.excluded_sites)),
+                               tuple(tuple(pair) for pair in cond.relocations))
     except ValueError as exc:
         st.error(f"지도 검산을 중단했습니다: {exc}")
         st.stop()
     map_column, summary_column = st.columns([3, 1], gap="large")
     with map_column:
-        st.pydeck_chart(make_deck(prepared), height=height, key=key)
+        event = st.pydeck_chart(make_deck(prepared), height=height, key=key,
+                                on_select="rerun", selection_mode="single-object")
+        st.caption("권역(색칠된 동)이나 거점(원)을 누르면 아래에 그 거점의 세부 내용이 나옵니다.")
     with summary_column:
         summary = prepared["summary"]
         st.markdown(f"**대안 {cond.alt} · {year}년**")
@@ -167,7 +170,77 @@ def render(cond, *, height=620, key="network_assignment_map"):
                 rgb = ",".join(map(str, marker["color"]))
                 st.html(f'<div style="font-size:12px;margin-bottom:5px"><span style="color:rgb({rgb})">●</span> '
                         f'{escape(marker["site_id"])} · {escape(marker["hub_type"])}형</div>')
-    st.caption("동 배정·주문은 저장된 대안별 배정표 기준입니다. 시장·인건비 조건은 재무에 반영하며, 제외 거점의 수요는 재배정하지 않습니다.")
+    selected = _selected_site(event)
+    if selected:
+        render_hub_detail(cond, selected, year)
+    st.caption("동 배정·주문은 시뮬레이션 환류(v3) 대안별 배정 결과입니다. 시장·인건비·운영비 조건은 재무에 반영하며, 제외 거점의 수요는 재배정하지 않습니다.")
+
+
+def _selected_site(event):
+    try:
+        objects = event.selection.get("objects", {}) if hasattr(event, "selection") else event["selection"]["objects"]
+    except (AttributeError, KeyError, TypeError):
+        return None
+    for layer, items in (objects or {}).items():
+        for item in items or []:
+            site = item.get("site_id") or (item.get("properties") or {}).get("site_id")
+            if site:
+                return site
+    return None
+
+
+@st.cache_data(show_spinner=False)
+def _capacity(alt):
+    model = data.load_models()[alt][0]
+    basis = data.load_output("feedback_basis_v3.csv")
+    row = basis[basis["T"].astype(int).eq(int(model.radius))].iloc[0]
+    return int(model.radius), {kind: float(row[f"capacity_per_day_{kind}"]) for kind in ("S", "M", "L")}
+
+
+def render_hub_detail(cond, site, year):
+    relocations = tuple(tuple(pair) for pair in cond.relocations)
+    plan = data.plan_for(cond.alt, relocations).set_index("site_id")
+    if site not in plan.index:
+        return
+    detail = data.candidate_sites().set_index("site_id").loc[site]
+    hub = plan.loc[site]
+    radius, capacity = _capacity(cond.alt)
+    cap = capacity[hub.hub_type]
+    base_scen = data.load_effective_config()["finance"]["default_scenario"]
+    ops = data.ops_for(cond.alt, base_scen, relocations)
+    ops = ops[ops.site_id.eq(site)].sort_values("year")
+    assign = data.assignment_for(cond.alt, relocations)
+    mine = assign[assign.site_id.eq(site)]
+    with st.container(key=f"glass_hub_{site}"):
+        close = "운영 중(2046년까지)" if pd.isna(pd.to_numeric(hub.close_year, errors="coerce")) else f"{int(float(hub.close_year))}년 폐점"
+        st.markdown(f"#### 거점 {site} · {hub.hub_type}형 · {detail['gu']} {detail['dong']}")
+        st.caption(f"{int(hub.open_year)}년 개점 · {close} · 서비스 반경 {radius}분 · 하루 처리 상한 {cap:,.0f}건(시뮬레이션 기준) · {hub.note}")
+        cur = mine[mine.year.eq(year)]
+        y = ops[ops.year.eq(year)]
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric(f"{year}년 담당 동", f"{len(cur):,}개")
+        orders = float(y.orders_per_day.iloc[0]) if not y.empty else 0.0
+        c2.metric(f"{year}년 하루 주문", f"{orders:,.0f}건")
+        c3.metric("처리 상한 대비", f"{orders / cap:.0%}" if cap else "-")
+        late = float(y.late_rate.iloc[0]) if not y.empty else 0.0
+        c4.metric("정시율", f"{1 - late:.1%}")
+        if not ops.empty:
+            unit = ops[list(("contract_rider_cost_per_order_krw", "employed_rider_cost_per_order_krw",
+                             "picker_cost_per_order_krw"))].sum(axis=1) * cond.cost_factor
+            progress = pd.DataFrame({"연도": ops.year.astype(int).astype(str), "하루 주문(건)": ops.orders_per_day.round(0),
+                                     "처리 상한(건)": round(cap), "가동률": (ops.orders_per_day / cap).map(lambda v: f"{v:.0%}"),
+                                     "주문당 운영비(원, 2027년 단가)": unit.round(0), "정시율": (1 - ops.late_rate).map(lambda v: f"{v:.1%}")})
+            st.markdown("**연도별 진행(기본 시장)**")
+            st.line_chart(progress.set_index("연도")[["하루 주문(건)", "처리 상한(건)"]], height=220)
+            st.dataframe(progress, hide_index=True, width="stretch")
+        if not cur.empty:
+            dongs = data.load_sites  # noqa: F841 (keep module import used)
+            geo = {f["properties"]["adm_cd2"]: f["properties"] for f in data.load_geo()["features"]}
+            listing = cur.assign(동=cur.adm_cd2.map(lambda c: f"{geo.get(c, {}).get('gu', '')} {geo.get(c, {}).get('dong', c)}"))
+            listing = listing[["동", "expected_orders_per_day", "avg_delivery_min"]].rename(
+                columns={"expected_orders_per_day": "하루 주문(건)", "avg_delivery_min": "평균 배송시간(분)"})
+            st.markdown(f"**{year}년 담당 동 {len(listing)}곳**")
+            st.dataframe(listing.sort_values("하루 주문(건)", ascending=False).round(1), hide_index=True, width="stretch")
 
 
 

@@ -43,6 +43,8 @@ def from_widgets():
         w1_on=st.session_state["w1_on"], w1_rate=st.session_state["w1_percent"] / PERCENT,
         excluded_sites=list(st.session_state["excluded_sites"]),
         cost_factor=float(st.session_state.get("cost_factor", 1.0)),
+        annual_cut=float(st.session_state.get("annual_cut_percent", 0.0)) / PERCENT,
+        relocations=tuple(tuple(pair) for pair in st.session_state.get("relocations", [])),
     )
 
 
@@ -51,7 +53,9 @@ def restore_conditions(snapshot):
     values = {"condition_alt": cond.alt, "condition_scen": cond.scen,
               "discount_percent": cond.discount_rate * PERCENT,
               "w1_on": cond.w1_on, "w1_percent": cond.w1_rate * PERCENT,
-              "excluded_sites": list(cond.excluded_sites), "cost_factor": cond.cost_factor}
+              "excluded_sites": list(cond.excluded_sites), "cost_factor": cond.cost_factor,
+              "annual_cut_percent": cond.annual_cut * PERCENT,
+              "relocations": [list(pair) for pair in cond.relocations]}
     st.session_state.update(values)
 
 
@@ -113,7 +117,7 @@ def render_quick():
 def is_reference(cond):
     default = reference_condition(cond.alt)
     return (cond.scen == default.scen and cond.discount_rate == default.discount_rate
-            and not cond.w1_on and not cond.excluded_sites and cond.cost_factor == 1.0)
+            and not cond.w1_on and not cond.excluded_sites and cond.cost_factor == 1.0 and cond.annual_cut == 0 and not cond.relocations)
 
 
 def _numeric(value):
@@ -209,6 +213,10 @@ def condition_summary(cond):
         parts.append(label + (f" 외 {len(excluded) - 1}곳" if len(excluded) > 1 else ""))
     if cond.cost_factor != 1.0:
         parts.append(f"운영비 ×{cond.cost_factor:.2f}")
+    if cond.relocations:
+        parts.append("이전 " + ", ".join(f"{a}→{b}" for a, b in cond.relocations))
+    if cond.annual_cut:
+        parts.append(f"운영비 매년 −{cond.annual_cut:.1%}".replace(".0%", "%"))
     if is_reference(cond):
         parts.append("기본")
     return " · ".join(parts)
