@@ -1,0 +1,4 @@
+﻿instance,hub_site_id,hub_lat,hub_lon,hub_gu,hub_type,rider_area_class,weather,description,service_radius_road_km,n_orders
+BM1,P1,37.4839,126.9294,관악구,M,A,clear,"P1 거점, 2029년 목요일, 맑음",2.2,1107
+BM2,P2,37.5056,127.1026,송파구,M,A,clear,"P2 거점, 2029년 토요일, 맑음",3.8,1261
+BM3,P1,37.4839,126.9294,관악구,M,A,rain,"P1 거점, 2029년 금요일, 비",2.2,1307

@@ -1,0 +1,4 @@
+﻿instance,expected_cap_or_income_failure,actual_cap_or_income_failure,cap_exceed_hours,rider_hourly,late_orders,bay_max,bike_bays,feasible,interpretation
+BM1,True,True,0,16026.014441566993,0,14,10,False,실제 접속 상한은 지키며 공급 부족을 지연으로 관측; 대기 공간 초과는 별도 실행 불가 원인
+BM2,True,True,0,11106.69874564115,1046,14,13,False,실제 접속 상한은 지키며 공급 부족을 지연으로 관측; 대기 공간 초과는 별도 실행 불가 원인
+BM3,True,False,0,20321.61566251634,569,11,10,False,실제 접속 상한은 지키며 공급 부족을 지연으로 관측; 대기 공간 초과는 별도 실행 불가 원인

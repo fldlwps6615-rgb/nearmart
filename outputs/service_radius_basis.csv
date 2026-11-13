@@ -1,0 +1,13 @@
+﻿instance,day_type,radius_type,radius_min,radius_km,version,tested_order_levels,passing_order_levels,ontime_target,feasible,max_orders_per_day,order_level,rider_cost_per_order,picker_cost_per_order,ontime_stoch_corrected_min,validation_repetitions
+BM1,weekday_clear,original,,2.2,v2,3,1,0.95,True,664.0,0.6,3614.9037380223062,1457.552710843374,0.9969879518072289,20.0
+BM1,weekday_clear,12,12.0,3.2,v2,3,2,0.95,True,886.0,0.8,3931.4990516585044,1418.4142212189615,0.9954853273137697,20.0
+BM1,weekday_clear,15,15.0,4.0,v2,3,0,0.95,False,,,,,,
+BM1,weekday_clear,20,20.0,5.333333333333333,v2,3,0,0.95,False,,,,,,
+BM2,weekend_clear,original,,3.8,v2,3,0,0.95,False,,,,,,
+BM2,weekend_clear,12,12.0,3.104,v2,3,2,0.95,True,1261.0,1.0,4049.337313091242,1237.1609833465507,0.9896907216494846,20.0
+BM2,weekend_clear,15,15.0,3.88,v2,3,1,0.95,True,1261.0,1.0,4038.8089917409625,1237.1609833465507,0.9809674861221253,20.0
+BM2,weekend_clear,20,20.0,5.173333333333333,v2,3,0,0.95,False,,,,,,
+BM3,weekday_rain,original,,2.2,v2,3,3,0.95,True,1307.0,1.0,4304.646004500004,1304.1392501912778,0.9969395562356542,20.0
+BM3,weekday_rain,12,12.0,3.2,v2,3,1,0.95,True,784.0,0.6,4527.385727294944,1418.7053571428573,0.9770408163265306,20.0
+BM3,weekday_rain,15,15.0,4.0,v2,3,1,0.95,True,784.0,0.6,5001.084652570159,1418.7053571428573,0.9642857142857143,20.0
+BM3,weekday_rain,20,20.0,5.333333333333333,v2,3,0,0.95,False,,,,,,

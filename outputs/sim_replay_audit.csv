@@ -1,0 +1,3 @@
+﻿hub_id,radius_km,observed_days,actual_log_days,source_orders,location_outside_radius,unresolved_weight,missing_delivery_rows,observed_external_le_35kg,quick_timing_samples,verified_fixed_seed,high_area_share,max_pickers,repetitions,simulated_orders,simulated_external_orders,simulated_late_orders,bay_peak_min,bay_peak_max,bike_bays,bay_exceeded_runs,supply_threshold_krw,supply_met_runs,supply_cap_exceeded_runs,execution_seconds
+P1,2.8,48,48,29077,2580,1,278,5,27,True,0.9562884754273137,10,20,12891,9,6,14,20,10,20,16585.36585365854,0,12,5.945922699997027
+P2,3.4,45,45,11733,794,0,112,2,13,True,0.31441234125969486,10,20,5201,4,1,16,20,13,20,16585.36585365854,0,0,5.945922699997027

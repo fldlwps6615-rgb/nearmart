@@ -1,0 +1,619 @@
+﻿stage,file,section,category,rule_id,n_rows,accepted_rows,residual_rows,status,example,detail
+raw,01_dong_master.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,01_dong_master.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,01_dong_master.csv,main,결측,REQUIRED_adm_cd2,0,0,0,checked,[],adm_cd2 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_adm_cd,0,0,0,checked,[],adm_cd 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_gu,0,0,0,checked,[],gu 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_dong,0,0,0,checked,[],dong 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_lat,0,0,0,checked,[],lat 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_lon,0,0,0,checked,[],lon 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_area_km2,0,0,0,checked,[],area_km2 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_population_2026,0,0,0,checked,[],population_2026 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_age20_39_ratio,0,0,0,checked,[],age20_39_ratio 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_age65_ratio,0,0,0,checked,[],age65_ratio 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_apt_hh_ratio,0,0,0,checked,[],apt_hh_ratio 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_day_night_pop_ratio,0,0,0,checked,[],day_night_pop_ratio 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_rider_area_class,0,0,0,checked,[],rider_area_class 필수값
+raw,01_dong_master.csv,main,결측,REQUIRED_river_side,0,0,0,checked,[],river_side 필수값
+raw,01_dong_master.csv,main,단위,NUMERIC_lat,0,0,0,checked,[],lat 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_lon,0,0,0,checked,[],lon 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_area_km2,0,0,0,checked,[],area_km2 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_population_2026,0,0,0,checked,[],population_2026 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_households_2026,0,0,0,checked,[],households_2026 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_single_hh_ratio,0,0,0,checked,[],single_hh_ratio 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_age20_39_ratio,0,0,0,checked,[],age20_39_ratio 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_age65_ratio,0,0,0,checked,[],age65_ratio 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_apt_hh_ratio,0,0,0,checked,[],apt_hh_ratio 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,NUMERIC_day_night_pop_ratio,0,0,0,checked,[],day_night_pop_ratio 유한 숫자 형식
+raw,01_dong_master.csv,main,단위,STRING_adm_cd2,0,0,0,checked,[],adm_cd2 문자열 보존
+raw,01_dong_master.csv,main,단위,CODE_FORMAT_adm_cd2,0,0,0,checked,[],행정동 코드 자릿수
+raw,01_dong_master.csv,main,단위,STRING_adm_cd,0,0,0,checked,[],adm_cd 문자열 보존
+raw,01_dong_master.csv,main,단위,CODE_FORMAT_adm_cd,0,0,0,checked,[],행정동 코드 자릿수
+raw,01_dong_master.csv,main,범위,RANGE_area_km2,0,0,0,checked,[],"area_km2: [1e-06, None]"
+raw,01_dong_master.csv,main,범위,RANGE_population_2026,0,0,0,checked,[],"population_2026: [1e-06, None]"
+raw,01_dong_master.csv,main,범위,RANGE_households_2026,0,0,0,checked,[],"households_2026: [1e-06, None]"
+raw,01_dong_master.csv,main,범위,RANGE_single_hh_ratio,0,0,0,checked,[],"single_hh_ratio: [0, 1]"
+raw,01_dong_master.csv,main,범위,RANGE_age20_39_ratio,0,0,0,checked,[],"age20_39_ratio: [0, 1]"
+raw,01_dong_master.csv,main,범위,RANGE_age65_ratio,0,0,0,checked,[],"age65_ratio: [0, 1]"
+raw,01_dong_master.csv,main,범위,RANGE_day_night_pop_ratio,0,0,0,checked,[],"day_night_pop_ratio: [0, None]"
+raw,01_dong_master.csv,main,상태값,ENUM_rider_area_class,0,0,0,checked,[],"rider_area_class 허용값 ['A', 'B', 'C']"
+raw,01_dong_master.csv,main,상태값,ENUM_river_side,0,0,0,checked,[],"river_side 허용값 ['N', 'S']"
+raw,01_dong_master.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,01_dong_master.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,01_dong_master.csv,main,좌표,COORD_lat,0,0,0,checked,[],서울 점검용 경위도 범위 및 위도=경도 검사
+raw,01_dong_master.csv,main,관계,DONG_FOREIGN_KEY,0,0,0,checked,[],01 행정동 코드 참조
+raw,01_dong_master.csv,main,관계,DONG_MATCH_gu,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,01_dong_master.csv,main,관계,DONG_MATCH_dong,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,01_dong_master.csv,main,결측,01_SINGLE_NULL,2,2,0,checked,"[{""adm_cd2"":""1126054000""},{""adm_cd2"":""1138059000""}]",1인가구 비율 결측
+raw,01_dong_master.csv,main,결측,01_HOUSEHOLDS_NULL,1,1,0,checked,"[{""adm_cd2"":""1156067000""}]",세대수 결측
+raw,01_dong_master.csv,main,범위,01_APT_PERCENT,1,1,0,checked,"[{""adm_cd2"":""1126061000""}]",아파트 비율 백분율 혼입
+raw,01_dong_master.csv,main,범위,APT_NEGATIVE,0,0,0,checked,[],아파트 비율 음수
+raw,01_dong_master.csv,main,범위,01_POP_SCALE,1,1,0,checked,"[{""adm_cd2"":""1132070000""}]",인구/세대 > 설정 상한
+raw,01_dong_master.csv,main,중복,ADM_CD_UNIQUE,0,0,0,checked,[],8자리 행정동 코드 유일성
+raw,01_dong_master.csv,main,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,03_candidate_sites.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,03_candidate_sites.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,03_candidate_sites.csv,main,결측,REQUIRED_site_id,0,0,0,checked,[],site_id 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_status,0,0,0,checked,[],status 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_gu,0,0,0,checked,[],gu 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_lat,0,0,0,checked,[],lat 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_lon,0,0,0,checked,[],lon 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_floor,0,0,0,checked,[],floor 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_area_value,0,0,0,checked,[],area_value 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_area_unit,0,0,0,checked,[],area_unit 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_deposit_krw,0,0,0,checked,[],deposit_krw 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_maintenance_krw_per_month,0,0,0,checked,[],maintenance_krw_per_month 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_available_from_year,0,0,0,checked,[],available_from_year 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_bike_bays,0,0,0,checked,[],bike_bays 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_truck_dock,0,0,0,checked,[],truck_dock 필수값
+raw,03_candidate_sites.csv,main,결측,REQUIRED_nonrenewal_prob_at_10y,0,0,0,checked,[],nonrenewal_prob_at_10y 필수값
+raw,03_candidate_sites.csv,main,단위,NUMERIC_lat,0,0,0,checked,[],lat 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_lon,0,0,0,checked,[],lon 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_area_value,0,0,0,checked,[],area_value 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_monthly_rent_krw,0,0,0,checked,[],monthly_rent_krw 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_deposit_krw,0,0,0,checked,[],deposit_krw 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_maintenance_krw_per_month,0,0,0,checked,[],maintenance_krw_per_month 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_available_from_year,0,0,0,checked,[],available_from_year 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_bike_bays,0,0,0,checked,[],bike_bays 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,NUMERIC_nonrenewal_prob_at_10y,0,0,0,checked,[],nonrenewal_prob_at_10y 유한 숫자 형식
+raw,03_candidate_sites.csv,main,단위,STRING_adm_cd2,0,0,0,checked,[],adm_cd2 문자열 보존
+raw,03_candidate_sites.csv,main,단위,CODE_FORMAT_adm_cd2,0,0,0,checked,[],행정동 코드 자릿수
+raw,03_candidate_sites.csv,main,단위,STRING_site_id,0,0,0,checked,[],site_id 문자열 보존
+raw,03_candidate_sites.csv,main,범위,RANGE_area_value,0,0,0,checked,[],"area_value: [1e-06, None]"
+raw,03_candidate_sites.csv,main,범위,RANGE_monthly_rent_krw,0,0,0,checked,[],"monthly_rent_krw: [0, None]"
+raw,03_candidate_sites.csv,main,범위,RANGE_deposit_krw,0,0,0,checked,[],"deposit_krw: [0, None]"
+raw,03_candidate_sites.csv,main,범위,RANGE_maintenance_krw_per_month,0,0,0,checked,[],"maintenance_krw_per_month: [0, None]"
+raw,03_candidate_sites.csv,main,범위,RANGE_available_from_year,0,0,0,checked,[],"available_from_year: [1900, 2100]"
+raw,03_candidate_sites.csv,main,범위,RANGE_bike_bays,0,0,0,checked,[],"bike_bays: [0, None]"
+raw,03_candidate_sites.csv,main,범위,RANGE_nonrenewal_prob_at_10y,0,0,0,checked,[],"nonrenewal_prob_at_10y: [0, 1]"
+raw,03_candidate_sites.csv,main,상태값,ENUM_truck_dock,0,0,0,checked,[],"truck_dock 허용값 ['Y', 'N']"
+raw,03_candidate_sites.csv,main,상태값,ENUM_floor,0,0,0,checked,[],"floor 허용값 ['B1', '1F', '2F']"
+raw,03_candidate_sites.csv,main,상태값,ENUM_status,0,0,0,checked,[],"status 허용값 ['PILOT', 'AVAILABLE']"
+raw,03_candidate_sites.csv,main,상태값,ENUM_area_unit,0,0,0,checked,[],"area_unit 허용값 ['㎡', '평']"
+raw,03_candidate_sites.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,03_candidate_sites.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,03_candidate_sites.csv,main,좌표,03_COORD,1,1,0,checked,"[{""site_id"":""C040"",""adm_cd2"":""1153075000""}]",서울 점검용 경위도 범위 및 위도=경도 검사
+raw,03_candidate_sites.csv,main,관계,DONG_FOREIGN_KEY,1,1,0,checked,"[{""site_id"":""C069"",""adm_cd2"":null}]",01 행정동 코드 참조
+raw,03_candidate_sites.csv,main,관계,DONG_MATCH_gu,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,03_candidate_sites.csv,main,관계,DONG_MATCH_dong,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,03_candidate_sites.csv,main,단위,03_PYEONG,18,18,0,checked,"[{""site_id"":""C001"",""adm_cd2"":""1111065000""},{""site_id"":""C006"",""adm_cd2"":""1117057000""},{""site_id"":""C010"",""adm_cd2"":""1121583000""}]",평→㎡ 환산 대상
+raw,03_candidate_sites.csv,main,범위,AREA_CLASSIFIABLE,0,0,0,checked,[],환산 면적 150~1000㎡
+raw,03_candidate_sites.csv,main,관계,03_OUTSIDE,1,1,0,checked,"[{""site_id"":""C069"",""adm_cd2"":null}]",서울 25개 구 밖 후보지
+raw,03_candidate_sites.csv,main,중복,03_DUPLICATE,2,2,0,checked,"[{""site_id"":""C067"",""adm_cd2"":""1165052000""},{""site_id"":""C068"",""adm_cd2"":""1135066500""}]",좌표·환산 면적 동일 매물의 추가 행 수
+raw,03_candidate_sites.csv,main,결측,03_RENT_NULL,3,3,0,checked,"[{""site_id"":""C012"",""adm_cd2"":""1123061000""},{""site_id"":""C014"",""adm_cd2"":""1126065500""},{""site_id"":""C066"",""adm_cd2"":""1174053000""}]",월세 결측
+raw,03_candidate_sites.csv,main,결측,PILOT_LEASE_REQUIRED,0,0,0,checked,[],파일럿 임대차 시작월 필요
+raw,03_candidate_sites.csv,main,시간대,LEASE_MONTH_FORMAT,0,0,0,checked,[],임대차 시작월 YYYY-MM
+raw,03_candidate_sites.csv,main,시간대,YEAR_INTEGER_available_from_year,0,0,0,checked,[],연도 정수
+raw,04_hub_types.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,04_hub_types.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,04_hub_types.csv,main,결측,REQUIRED_hub_type,0,0,0,checked,[],hub_type 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_area_min_m2,0,0,0,checked,[],area_min_m2 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_area_max_m2,0,0,0,checked,[],area_max_m2 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_max_pickers,0,0,0,checked,[],max_pickers 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_sku_count,0,0,0,checked,[],sku_count 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_assortment_demand_factor,0,0,0,checked,[],assortment_demand_factor 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_capex_krw,0,0,0,checked,[],capex_krw 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_fixed_staff_fte,0,0,0,checked,[],fixed_staff_fte 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_fixed_staff_cost_krw_per_month,0,0,0,checked,[],fixed_staff_cost_krw_per_month 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_utilities_krw_per_month,0,0,0,checked,[],utilities_krw_per_month 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_replenish_cost_krw_per_day,0,0,0,checked,[],replenish_cost_krw_per_day 필수값
+raw,04_hub_types.csv,main,결측,REQUIRED_launch_marketing_krw,0,0,0,checked,[],launch_marketing_krw 필수값
+raw,04_hub_types.csv,main,단위,NUMERIC_area_min_m2,0,0,0,checked,[],area_min_m2 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_area_max_m2,0,0,0,checked,[],area_max_m2 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_max_pickers,0,0,0,checked,[],max_pickers 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_sku_count,0,0,0,checked,[],sku_count 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_assortment_demand_factor,0,0,0,checked,[],assortment_demand_factor 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_capex_krw,0,0,0,checked,[],capex_krw 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_fixed_staff_fte,0,0,0,checked,[],fixed_staff_fte 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_fixed_staff_cost_krw_per_month,0,0,0,checked,[],fixed_staff_cost_krw_per_month 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_utilities_krw_per_month,0,0,0,checked,[],utilities_krw_per_month 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_replenish_cost_krw_per_day,0,0,0,checked,[],replenish_cost_krw_per_day 유한 숫자 형식
+raw,04_hub_types.csv,main,단위,NUMERIC_launch_marketing_krw,0,0,0,checked,[],launch_marketing_krw 유한 숫자 형식
+raw,04_hub_types.csv,main,범위,RANGE_area_min_m2,0,0,0,checked,[],"area_min_m2: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_area_max_m2,0,0,0,checked,[],"area_max_m2: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_max_pickers,0,0,0,checked,[],"max_pickers: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_sku_count,0,0,0,checked,[],"sku_count: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_assortment_demand_factor,0,0,0,checked,[],"assortment_demand_factor: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_capex_krw,0,0,0,checked,[],"capex_krw: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_fixed_staff_fte,0,0,0,checked,[],"fixed_staff_fte: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_fixed_staff_cost_krw_per_month,0,0,0,checked,[],"fixed_staff_cost_krw_per_month: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_utilities_krw_per_month,0,0,0,checked,[],"utilities_krw_per_month: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_replenish_cost_krw_per_day,0,0,0,checked,[],"replenish_cost_krw_per_day: [0, None]"
+raw,04_hub_types.csv,main,범위,RANGE_launch_marketing_krw,0,0,0,checked,[],"launch_marketing_krw: [0, None]"
+raw,04_hub_types.csv,main,상태값,ENUM_hub_type,0,0,0,checked,[],"hub_type 허용값 ['S', 'M', 'L']"
+raw,04_hub_types.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,04_hub_types.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,04_hub_types.csv,main,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,04_hub_types.csv,main,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,05_pilot_orders.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,05_pilot_orders.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,05_pilot_orders.csv,main,결측,REQUIRED_order_id,0,0,0,checked,[],order_id 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_hub_id,0,0,0,checked,[],hub_id 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_order_ts,0,0,0,checked,[],order_ts 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_adm_cd2,0,0,0,checked,[],adm_cd2 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_gu,0,0,0,checked,[],gu 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_dong,0,0,0,checked,[],dong 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_cust_lat,0,0,0,checked,[],cust_lat 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_cust_lon,0,0,0,checked,[],cust_lon 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_building_type,0,0,0,checked,[],building_type 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_basket_krw,0,0,0,checked,[],basket_krw 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_items,0,0,0,checked,[],items 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_has_chilled,0,0,0,checked,[],has_chilled 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_has_frozen,0,0,0,checked,[],has_frozen 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_delivery_fee_krw,0,0,0,checked,[],delivery_fee_krw 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_status,0,0,0,checked,[],status 필수값
+raw,05_pilot_orders.csv,main,결측,REQUIRED_late_coupon_krw,0,0,0,checked,[],late_coupon_krw 필수값
+raw,05_pilot_orders.csv,main,단위,NUMERIC_cust_lat,0,0,0,checked,[],cust_lat 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_cust_lon,0,0,0,checked,[],cust_lon 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_basket_krw,0,0,0,checked,[],basket_krw 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_items,0,0,0,checked,[],items 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_weight_kg,0,0,0,checked,[],weight_kg 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_has_chilled,0,0,0,checked,[],has_chilled 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_has_frozen,0,0,0,checked,[],has_frozen 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_delivery_fee_krw,0,0,0,checked,[],delivery_fee_krw 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_trip_seq,0,0,0,checked,[],trip_seq 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_rider_pay_alloc_krw,0,0,0,checked,[],rider_pay_alloc_krw 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,NUMERIC_late_coupon_krw,0,0,0,checked,[],late_coupon_krw 유한 숫자 형식
+raw,05_pilot_orders.csv,main,단위,STRING_adm_cd2,0,0,0,checked,[],adm_cd2 문자열 보존
+raw,05_pilot_orders.csv,main,단위,CODE_FORMAT_adm_cd2,0,0,0,checked,[],행정동 코드 자릿수
+raw,05_pilot_orders.csv,main,단위,STRING_hub_id,0,0,0,checked,[],hub_id 문자열 보존
+raw,05_pilot_orders.csv,main,단위,STRING_order_id,0,0,0,checked,[],order_id 문자열 보존
+raw,05_pilot_orders.csv,main,단위,STRING_rider_id,0,0,0,checked,[],rider_id 문자열 보존
+raw,05_pilot_orders.csv,main,단위,STRING_trip_id,0,0,0,checked,[],trip_id 문자열 보존
+raw,05_pilot_orders.csv,main,범위,RANGE_basket_krw,0,0,0,checked,[],"basket_krw: [0, None]"
+raw,05_pilot_orders.csv,main,범위,RANGE_items,0,0,0,checked,[],"items: [1e-06, None]"
+raw,05_pilot_orders.csv,main,범위,RANGE_has_chilled,0,0,0,checked,[],"has_chilled: [0, None]"
+raw,05_pilot_orders.csv,main,범위,RANGE_has_frozen,0,0,0,checked,[],"has_frozen: [0, None]"
+raw,05_pilot_orders.csv,main,범위,RANGE_delivery_fee_krw,0,0,0,checked,[],"delivery_fee_krw: [0, None]"
+raw,05_pilot_orders.csv,main,범위,RANGE_trip_seq,0,0,0,checked,[],"trip_seq: [0, None]"
+raw,05_pilot_orders.csv,main,범위,RANGE_rider_pay_alloc_krw,0,0,0,checked,[],"rider_pay_alloc_krw: [0, None]"
+raw,05_pilot_orders.csv,main,범위,RANGE_late_coupon_krw,0,0,0,checked,[],"late_coupon_krw: [0, None]"
+raw,05_pilot_orders.csv,main,상태값,ENUM_building_type,0,0,0,checked,[],"building_type 허용값 ['아파트', '기타']"
+raw,05_pilot_orders.csv,main,상태값,ENUM_has_chilled,0,0,0,checked,[],"has_chilled 허용값 [0, 1]"
+raw,05_pilot_orders.csv,main,상태값,ENUM_has_frozen,0,0,0,checked,[],"has_frozen 허용값 [0, 1]"
+raw,05_pilot_orders.csv,main,상태값,ENUM_status,0,0,0,checked,[],"status 허용값 ['DELIVERED', 'TEST', 'CANCELLED']"
+raw,05_pilot_orders.csv,main,중복,05_DUPLICATE,237,237,0,checked,"[{""order_id"":""P1-260706-0398"",""adm_cd2"":""1162066500""},{""order_id"":""P1-260709-0179"",""adm_cd2"":""1162076500""},{""order_id"":""P1-260710-0007"",""adm_cd2"":""1162066500""}]",완전 중복의 두 번째 이후 행
+raw,05_pilot_orders.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,05_pilot_orders.csv,main,좌표,05_COORD,198,198,0,checked,"[{""order_id"":""P1-260706-0190"",""adm_cd2"":""1162065500""},{""order_id"":""P1-260706-0262"",""adm_cd2"":""1162059500""},{""order_id"":""P1-260712-0217"",""adm_cd2"":""1162064500""}]",서울 점검용 경위도 범위 및 위도=경도 검사
+raw,05_pilot_orders.csv,main,관계,DONG_FOREIGN_KEY,0,0,0,checked,[],01 행정동 코드 참조
+raw,05_pilot_orders.csv,main,관계,DONG_MATCH_gu,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,05_pilot_orders.csv,main,관계,DONG_MATCH_dong,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,05_pilot_orders.csv,main,상태값,05_TEST,24,24,0,checked,"[{""order_id"":""P1-260706-0002"",""adm_cd2"":""1156068000""},{""order_id"":""P1-260706-0004"",""adm_cd2"":""1156068000""},{""order_id"":""P1-260706-0006"",""adm_cd2"":""1156068000""}]",별도 파일 분리 대상
+raw,05_pilot_orders.csv,main,상태값,05_CANCELLED,1563,1563,0,checked,"[{""order_id"":""P1-260706-0089"",""adm_cd2"":""1162065500""},{""order_id"":""P1-260706-0179"",""adm_cd2"":""1162066500""},{""order_id"":""P1-260706-0184"",""adm_cd2"":""1159067000""}]",별도 파일 분리 대상
+raw,05_pilot_orders.csv,main,범위,05_WEIGHT_NEGATIVE,81,81,0,checked,"[{""order_id"":""P1-260708-0037"",""adm_cd2"":""1162064500""},{""order_id"":""P1-260708-0486"",""adm_cd2"":""1162060500""},{""order_id"":""P1-260709-0422"",""adm_cd2"":""1159056000""}]",중량 음수→결측→품목 수별 중앙값
+raw,05_pilot_orders.csv,main,결측,05_WEIGHT_NULL,239,239,0,checked,"[{""order_id"":""P1-260708-0244"",""adm_cd2"":""1159067000""},{""order_id"":""P1-260710-0063"",""adm_cd2"":""1159068000""},{""order_id"":""P1-260710-0241"",""adm_cd2"":""1162052500""}]",중량 결측; 승인된 미해결 주문은 수요만 포함
+raw,05_pilot_orders.csv,main,결측,DELIVERED_REQUIRED_pick_start_ts,0,0,0,checked,[],배송 주문 필수 실행 기록
+raw,05_pilot_orders.csv,main,결측,DELIVERED_REQUIRED_pick_end_ts,0,0,0,checked,[],배송 주문 필수 실행 기록
+raw,05_pilot_orders.csv,main,결측,DELIVERED_REQUIRED_depart_ts,0,0,0,checked,[],배송 주문 필수 실행 기록
+raw,05_pilot_orders.csv,main,결측,DELIVERED_REQUIRED_rider_id,0,0,0,checked,[],배송 주문 필수 실행 기록
+raw,05_pilot_orders.csv,main,결측,DELIVERED_REQUIRED_trip_seq,0,0,0,checked,[],배송 주문 필수 실행 기록
+raw,05_pilot_orders.csv,main,결측,DELIVERED_REQUIRED_rider_pay_alloc_krw,0,0,0,checked,[],배송 주문 필수 실행 기록
+raw,05_pilot_orders.csv,main,결측,INTERNAL_TRIP_REQUIRED,0,0,0,checked,[],내부 라이더 트립 ID 필수; 외부 퀵 제외
+raw,05_pilot_orders.csv,main,결측,05_DELIVERED_NULL,778,778,0,checked,"[{""order_id"":""P1-260706-0098"",""adm_cd2"":""1162065500""},{""order_id"":""P1-260706-0151"",""adm_cd2"":""1162052500""},{""order_id"":""P1-260706-0172"",""adm_cd2"":""1156068000""}]",전달 시각 결측은 수요 포함·배송시간 KPI 제외
+raw,05_pilot_orders.csv,main,시간대,05_SHIFT,1,1,0,checked,"[{""item"":0}]","전체 접수 시간대를 +9시간 복구할 수 있는 거점·일: [('P2', '2026-08-20')]"
+raw,05_pilot_orders.csv,main,시간대,UNKNOWN_SHIFT_GROUP,0,0,0,checked,[],set()
+raw,05_pilot_orders.csv,main,시간대,TIMESTAMP_FORMAT_order_ts,0,0,0,checked,[],YYYY-MM-DD HH:MM:SS
+raw,05_pilot_orders.csv,main,시간대,TIMESTAMP_FORMAT_pick_start_ts,0,0,0,checked,[],YYYY-MM-DD HH:MM:SS
+raw,05_pilot_orders.csv,main,시간대,TIMESTAMP_FORMAT_pick_end_ts,0,0,0,checked,[],YYYY-MM-DD HH:MM:SS
+raw,05_pilot_orders.csv,main,시간대,TIMESTAMP_FORMAT_depart_ts,0,0,0,checked,[],YYYY-MM-DD HH:MM:SS
+raw,05_pilot_orders.csv,main,시간대,TIMESTAMP_FORMAT_delivered_ts,0,0,0,checked,[],YYYY-MM-DD HH:MM:SS
+raw,05_pilot_orders.csv,main,시간대,TIME_SEQUENCE_order_ts,0,0,0,checked,[],order_ts <= pick_start_ts
+raw,05_pilot_orders.csv,main,시간대,TIME_SEQUENCE_pick_start_ts,0,0,0,checked,[],pick_start_ts <= pick_end_ts
+raw,05_pilot_orders.csv,main,시간대,TIME_SEQUENCE_pick_end_ts,0,0,0,checked,[],pick_end_ts <= depart_ts
+raw,05_pilot_orders.csv,main,시간대,TIME_SEQUENCE_depart_ts,0,0,0,checked,[],depart_ts <= delivered_ts
+raw,05_pilot_orders.csv,main,시간대,ORDER_SERVICE_HOURS,176,176,0,checked,"[{""order_id"":""P2-260820-0001"",""adm_cd2"":""1171059000""},{""order_id"":""P2-260820-0002"",""adm_cd2"":""1168073000""},{""order_id"":""P2-260820-0003"",""adm_cd2"":""1168075000""}]",09:00~23:30 접수; 승인한 +9h 그룹만 원본 예외
+raw,05_pilot_orders.csv,main,관계,ORDER_ID_DATE,0,0,0,checked,[],주문 ID 날짜와 접수일 일치
+raw,05_pilot_orders.csv,main,관계,ORDER_HUB,0,0,0,checked,[],거점 ID 참조
+raw,05_pilot_orders.csv,main,관계,ORDER_CALENDAR,0,0,0,checked,[],달력의 영업일 존재
+raw,05_pilot_orders.csv,main,관계,RIDER_DAY_REFERENCE,0,0,0,checked,[],내부 라이더 거점·영업일 접속 기록 존재
+raw,05b_pilot_rider_log.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,05b_pilot_rider_log.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_date,0,0,0,checked,[],date 필수값
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_hub_id,0,0,0,checked,[],hub_id 필수값
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_rider_id,0,0,0,checked,[],rider_id 필수값
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_login_ts,0,0,0,checked,[],login_ts 필수값
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_logoff_ts,0,0,0,checked,[],logoff_ts 필수값
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_trips,0,0,0,checked,[],trips 필수값
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_orders_delivered,0,0,0,checked,[],orders_delivered 필수값
+raw,05b_pilot_rider_log.csv,main,결측,REQUIRED_pay_krw,0,0,0,checked,[],pay_krw 필수값
+raw,05b_pilot_rider_log.csv,main,단위,NUMERIC_trips,0,0,0,checked,[],trips 유한 숫자 형식
+raw,05b_pilot_rider_log.csv,main,단위,NUMERIC_orders_delivered,0,0,0,checked,[],orders_delivered 유한 숫자 형식
+raw,05b_pilot_rider_log.csv,main,단위,NUMERIC_pay_krw,0,0,0,checked,[],pay_krw 유한 숫자 형식
+raw,05b_pilot_rider_log.csv,main,단위,STRING_hub_id,0,0,0,checked,[],hub_id 문자열 보존
+raw,05b_pilot_rider_log.csv,main,단위,STRING_rider_id,0,0,0,checked,[],rider_id 문자열 보존
+raw,05b_pilot_rider_log.csv,main,범위,RANGE_trips,0,0,0,checked,[],"trips: [0, None]"
+raw,05b_pilot_rider_log.csv,main,범위,RANGE_orders_delivered,0,0,0,checked,[],"orders_delivered: [0, None]"
+raw,05b_pilot_rider_log.csv,main,범위,RANGE_pay_krw,0,0,0,checked,[],"pay_krw: [0, None]"
+raw,05b_pilot_rider_log.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,05b_pilot_rider_log.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,05b_pilot_rider_log.csv,main,시간대,RIDER_TIME,0,0,0,checked,[],접속·종료 시각 형식 및 순서
+raw,05b_pilot_rider_log.csv,main,시간대,RIDER_ORDER_WINDOW,0,0,0,checked,[],영업일 이후 접속 및 해당 주문의 출발·전달 시각을 접속 구간에 포함; 자정 이후 접속 허용
+raw,05b_pilot_rider_log.csv,main,관계,RIDER_HUB,0,0,0,checked,[],거점 ID 참조
+raw,05b_pilot_rider_log.csv,main,관계,RIDER_CALENDAR,0,0,0,checked,[],접속 영업일의 달력 존재
+raw,05b_pilot_rider_log.csv,main,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,05b_pilot_rider_log.csv,main,상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,06_pilot_calendar_weather.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,06_pilot_calendar_weather.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,06_pilot_calendar_weather.csv,main,결측,REQUIRED_date,0,0,0,checked,[],date 필수값
+raw,06_pilot_calendar_weather.csv,main,결측,REQUIRED_weekday,0,0,0,checked,[],weekday 필수값
+raw,06_pilot_calendar_weather.csv,main,결측,REQUIRED_weather,0,0,0,checked,[],weather 필수값
+raw,06_pilot_calendar_weather.csv,main,결측,REQUIRED_rain_mm,0,0,0,checked,[],rain_mm 필수값
+raw,06_pilot_calendar_weather.csv,main,결측,REQUIRED_max_temp_c,0,0,0,checked,[],max_temp_c 필수값
+raw,06_pilot_calendar_weather.csv,main,단위,NUMERIC_rain_mm,0,0,0,checked,[],rain_mm 유한 숫자 형식
+raw,06_pilot_calendar_weather.csv,main,단위,NUMERIC_max_temp_c,0,0,0,checked,[],max_temp_c 유한 숫자 형식
+raw,06_pilot_calendar_weather.csv,main,범위,RANGE_rain_mm,0,0,0,checked,[],"rain_mm: [0, None]"
+raw,06_pilot_calendar_weather.csv,main,범위,RANGE_max_temp_c,0,0,0,checked,[],"max_temp_c: [-60, 60]"
+raw,06_pilot_calendar_weather.csv,main,상태값,ENUM_weather,0,0,0,checked,[],"weather 허용값 ['clear', 'rain', 'heavy_rain', 'snow']"
+raw,06_pilot_calendar_weather.csv,main,상태값,ENUM_weekday,0,0,0,checked,[],"weekday 허용값 ['월', '화', '수', '목', '금', '토', '일']"
+raw,06_pilot_calendar_weather.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,06_pilot_calendar_weather.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,06_pilot_calendar_weather.csv,main,시간대,CALENDAR_DATE,0,0,0,checked,[],달력 날짜 파싱
+raw,06_pilot_calendar_weather.csv,main,시간대,WEEKDAY_MATCH,0,0,0,checked,[],날짜-요일 일치
+raw,06_pilot_calendar_weather.csv,main,관계,CALENDAR_CONTIGUOUS,0,0,0,checked,[],달력 연속 일자
+raw,06_pilot_calendar_weather.csv,main,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,07_market_scenarios.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",결측,REQUIRED_year,0,0,0,checked,[],year 필수값
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",결측,REQUIRED_kind,0,0,0,checked,[],kind 필수값
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",결측,REQUIRED_market_trillion_krw,0,0,0,checked,[],market_trillion_krw 필수값
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",결측,REQUIRED_note,0,0,0,checked,[],note 필수값
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",단위,NUMERIC_year,0,0,0,checked,[],year 유한 숫자 형식
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",단위,NUMERIC_market_trillion_krw,0,0,0,checked,[],market_trillion_krw 유한 숫자 형식
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",범위,RANGE_year,0,0,0,checked,[],"year: [1900, 2100]"
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",범위,RANGE_market_trillion_krw,0,0,0,checked,[],"market_trillion_krw: [0, None]"
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",시간대,YEAR_INTEGER_year,0,0,0,checked,[],연도 정수
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,07_market_scenarios.csv,"[A] 국내 퀵커머스 시장 규모(참고, 조원)",상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),결측,REQUIRED_year,0,0,0,checked,[],year 필수값
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),결측,REQUIRED_index_low,0,0,0,checked,[],index_low 필수값
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),결측,REQUIRED_index_base,0,0,0,checked,[],index_base 필수값
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),결측,REQUIRED_index_high,0,0,0,checked,[],index_high 필수값
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),단위,NUMERIC_year,0,0,0,checked,[],year 유한 숫자 형식
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),단위,NUMERIC_index_low,0,0,0,checked,[],index_low 유한 숫자 형식
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),단위,NUMERIC_index_base,0,0,0,checked,[],index_base 유한 숫자 형식
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),단위,NUMERIC_index_high,0,0,0,checked,[],index_high 유한 숫자 형식
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),범위,RANGE_year,0,0,0,checked,[],"year: [1900, 2100]"
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),범위,RANGE_index_low,0,0,0,checked,[],"index_low: [0, None]"
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),범위,RANGE_index_base,0,0,0,checked,[],"index_base: [0, None]"
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),범위,RANGE_index_high,0,0,0,checked,[],"index_high: [0, None]"
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),시간대,YEAR_INTEGER_year,0,0,0,checked,[],연도 정수
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,07_market_scenarios.csv,[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00),상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,08_population_projection.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,08_population_projection.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,08_population_projection.csv,main,결측,REQUIRED_gu,0,0,0,checked,[],gu 필수값
+raw,08_population_projection.csv,main,결측,REQUIRED_year,0,0,0,checked,[],year 필수값
+raw,08_population_projection.csv,main,결측,REQUIRED_population_index,0,0,0,checked,[],population_index 필수값
+raw,08_population_projection.csv,main,결측,REQUIRED_households_index,0,0,0,checked,[],households_index 필수값
+raw,08_population_projection.csv,main,결측,REQUIRED_single_hh_ratio_change_pp,0,0,0,checked,[],single_hh_ratio_change_pp 필수값
+raw,08_population_projection.csv,main,단위,NUMERIC_year,0,0,0,checked,[],year 유한 숫자 형식
+raw,08_population_projection.csv,main,단위,NUMERIC_population_index,0,0,0,checked,[],population_index 유한 숫자 형식
+raw,08_population_projection.csv,main,단위,NUMERIC_households_index,0,0,0,checked,[],households_index 유한 숫자 형식
+raw,08_population_projection.csv,main,단위,NUMERIC_single_hh_ratio_change_pp,0,0,0,checked,[],single_hh_ratio_change_pp 유한 숫자 형식
+raw,08_population_projection.csv,main,범위,RANGE_year,0,0,0,checked,[],"year: [1900, 2100]"
+raw,08_population_projection.csv,main,범위,RANGE_population_index,0,0,0,checked,[],"population_index: [0, None]"
+raw,08_population_projection.csv,main,범위,RANGE_households_index,0,0,0,checked,[],"households_index: [0, None]"
+raw,08_population_projection.csv,main,범위,RANGE_single_hh_ratio_change_pp,0,0,0,checked,[],"single_hh_ratio_change_pp: [-100, 100]"
+raw,08_population_projection.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,08_population_projection.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,08_population_projection.csv,main,관계,GU_FOREIGN_KEY,0,0,0,checked,[],01 자치구 참조
+raw,08_population_projection.csv,main,시간대,YEAR_INTEGER_year,0,0,0,checked,[],연도 정수
+raw,08_population_projection.csv,main,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,08_population_projection.csv,main,상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,09_competitor_hubs.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,09_competitor_hubs.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_comp_hub_id,0,0,0,checked,[],comp_hub_id 필수값
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_gu,0,0,0,checked,[],gu 필수값
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_dong,0,0,0,checked,[],dong 필수값
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_adm_cd2,0,0,0,checked,[],adm_cd2 필수값
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_lat,0,0,0,checked,[],lat 필수값
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_lon,0,0,0,checked,[],lon 필수값
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_open_year,0,0,0,checked,[],open_year 필수값
+raw,09_competitor_hubs.csv,main,결측,REQUIRED_competitor,0,0,0,checked,[],competitor 필수값
+raw,09_competitor_hubs.csv,main,단위,NUMERIC_lat,0,0,0,checked,[],lat 유한 숫자 형식
+raw,09_competitor_hubs.csv,main,단위,NUMERIC_lon,0,0,0,checked,[],lon 유한 숫자 형식
+raw,09_competitor_hubs.csv,main,단위,NUMERIC_open_year,0,0,0,checked,[],open_year 유한 숫자 형식
+raw,09_competitor_hubs.csv,main,단위,NUMERIC_close_year,0,0,0,checked,[],close_year 유한 숫자 형식
+raw,09_competitor_hubs.csv,main,단위,STRING_adm_cd2,0,0,0,checked,[],adm_cd2 문자열 보존
+raw,09_competitor_hubs.csv,main,단위,CODE_FORMAT_adm_cd2,0,0,0,checked,[],행정동 코드 자릿수
+raw,09_competitor_hubs.csv,main,단위,STRING_comp_hub_id,0,0,0,checked,[],comp_hub_id 문자열 보존
+raw,09_competitor_hubs.csv,main,범위,RANGE_open_year,0,0,0,checked,[],"open_year: [1900, 2100]"
+raw,09_competitor_hubs.csv,main,범위,RANGE_close_year,0,0,0,checked,[],"close_year: [1900, 2100]"
+raw,09_competitor_hubs.csv,main,상태값,ENUM_competitor,0,0,0,checked,[],"competitor 허용값 ['A', 'B(what-if)']"
+raw,09_competitor_hubs.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,09_competitor_hubs.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,09_competitor_hubs.csv,main,좌표,COORD_lat,0,0,0,checked,[],서울 점검용 경위도 범위 및 위도=경도 검사
+raw,09_competitor_hubs.csv,main,관계,DONG_FOREIGN_KEY,0,0,0,checked,[],01 행정동 코드 참조
+raw,09_competitor_hubs.csv,main,관계,DONG_MATCH_gu,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,09_competitor_hubs.csv,main,관계,DONG_MATCH_dong,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,09_competitor_hubs.csv,main,시간대,COMPETITOR_YEARS,0,0,0,checked,[],폐점연도>=개점연도; 폐점 2건은 정상
+raw,09_competitor_hubs.csv,main,시간대,YEAR_INTEGER_open_year,0,0,0,checked,[],연도 정수
+raw,09_competitor_hubs.csv,main,시간대,YEAR_INTEGER_close_year,0,0,0,checked,[],연도 정수
+raw,10_market_rules.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,10_market_rules.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,10_market_rules.csv,main,결측,REQUIRED_rule,0,0,0,checked,[],rule 필수값
+raw,10_market_rules.csv,main,결측,REQUIRED_key,0,0,0,checked,[],key 필수값
+raw,10_market_rules.csv,main,단위,NUMERIC_value,0,0,0,checked,[],value 유한 숫자 형식
+raw,10_market_rules.csv,main,범위,RANGE_value,0,0,0,checked,[],"value: [0, None]"
+raw,10_market_rules.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,10_market_rules.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,10_market_rules.csv,main,결측,RULE_VALUE,0,0,0,checked,[],다른 표 참조 또는 영업시간 설명 외 수치 필수
+raw,10_market_rules.csv,main,결측,RULE_UNIT,0,0,0,checked,[],영업시간 설명 외 단위 필수
+raw,10_market_rules.csv,main,단위,RULE_UNIT_ENUM,0,0,0,checked,[],시장규칙 단위
+raw,10_market_rules.csv,main,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,10_market_rules.csv,main,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,10_market_rules.csv,main,상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,11_bridges.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,11_bridges.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,11_bridges.csv,main,결측,REQUIRED_bridge,0,0,0,checked,[],bridge 필수값
+raw,11_bridges.csv,main,결측,REQUIRED_lat,0,0,0,checked,[],lat 필수값
+raw,11_bridges.csv,main,결측,REQUIRED_lon,0,0,0,checked,[],lon 필수값
+raw,11_bridges.csv,main,결측,REQUIRED_motorcycle_allowed,0,0,0,checked,[],motorcycle_allowed 필수값
+raw,11_bridges.csv,main,단위,NUMERIC_lat,0,0,0,checked,[],lat 유한 숫자 형식
+raw,11_bridges.csv,main,단위,NUMERIC_lon,0,0,0,checked,[],lon 유한 숫자 형식
+raw,11_bridges.csv,main,상태값,ENUM_motorcycle_allowed,0,0,0,checked,[],"motorcycle_allowed 허용값 [True, False]"
+raw,11_bridges.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,11_bridges.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,11_bridges.csv,main,좌표,COORD_lat,0,0,0,checked,[],서울 점검용 경위도 범위 및 위도=경도 검사
+raw,11_bridges.csv,main,범위,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,11_bridges.csv,main,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,12_speed_profile.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,결측,REQUIRED_hour,0,0,0,checked,[],hour 필수값
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,결측,REQUIRED_base_speed_kmh,0,0,0,checked,[],base_speed_kmh 필수값
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,단위,NUMERIC_hour,0,0,0,checked,[],hour 유한 숫자 형식
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,단위,NUMERIC_base_speed_kmh,0,0,0,checked,[],base_speed_kmh 유한 숫자 형식
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,범위,RANGE_hour,0,0,0,checked,[],"hour: [0, 24]"
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,범위,RANGE_base_speed_kmh,0,0,0,checked,[],"base_speed_kmh: [0, None]"
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,시간대,HOUR_INTEGER,0,0,0,checked,[],정수 0~23시
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,시간대,HOURS_COMPLETE,0,0,0,checked,[],24개 시간대 완비
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,12_speed_profile.csv,[A] 시간대별 이륜차 기본속도,상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),결측,REQUIRED_gu,0,0,0,checked,[],gu 필수값
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),결측,REQUIRED_gu_speed_factor,0,0,0,checked,[],gu_speed_factor 필수값
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),단위,NUMERIC_gu_speed_factor,0,0,0,checked,[],gu_speed_factor 유한 숫자 형식
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),범위,RANGE_gu_speed_factor,0,0,0,checked,[],"gu_speed_factor: [0, None]"
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),관계,GU_FOREIGN_KEY,0,0,0,checked,[],01 자치구 참조
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,12_speed_profile.csv,[B] 자치구 지역계수(출발·도착 평균 적용),상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,12_speed_profile.csv,[C] 기상 계수,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,12_speed_profile.csv,[C] 기상 계수,결측,REQUIRED_weather,0,0,0,checked,[],weather 필수값
+raw,12_speed_profile.csv,[C] 기상 계수,결측,REQUIRED_weather_speed_factor,0,0,0,checked,[],weather_speed_factor 필수값
+raw,12_speed_profile.csv,[C] 기상 계수,단위,NUMERIC_weather_speed_factor,0,0,0,checked,[],weather_speed_factor 유한 숫자 형식
+raw,12_speed_profile.csv,[C] 기상 계수,범위,RANGE_weather_speed_factor,0,0,0,checked,[],"weather_speed_factor: [0, None]"
+raw,12_speed_profile.csv,[C] 기상 계수,상태값,ENUM_weather,0,0,0,checked,[],"weather 허용값 ['clear', 'rain', 'heavy_rain', 'snow']"
+raw,12_speed_profile.csv,[C] 기상 계수,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,12_speed_profile.csv,[C] 기상 계수,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,12_speed_profile.csv,[C] 기상 계수,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,12_speed_profile.csv,[C] 기상 계수,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,13_od_site_dong.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,13_od_site_dong.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,13_od_site_dong.csv,main,결측,REQUIRED_site_id,0,0,0,checked,[],site_id 필수값
+raw,13_od_site_dong.csv,main,결측,REQUIRED_adm_cd2,0,0,0,checked,[],adm_cd2 필수값
+raw,13_od_site_dong.csv,main,결측,REQUIRED_straight_km,0,0,0,checked,[],straight_km 필수값
+raw,13_od_site_dong.csv,main,결측,REQUIRED_road_km,0,0,0,checked,[],road_km 필수값
+raw,13_od_site_dong.csv,main,결측,REQUIRED_time_offpeak_min,0,0,0,checked,[],time_offpeak_min 필수값
+raw,13_od_site_dong.csv,main,결측,REQUIRED_time_peak_min,0,0,0,checked,[],time_peak_min 필수값
+raw,13_od_site_dong.csv,main,단위,NUMERIC_straight_km,0,0,0,checked,[],straight_km 유한 숫자 형식
+raw,13_od_site_dong.csv,main,단위,NUMERIC_road_km,0,0,0,checked,[],road_km 유한 숫자 형식
+raw,13_od_site_dong.csv,main,단위,NUMERIC_time_offpeak_min,0,0,0,checked,[],time_offpeak_min 유한 숫자 형식
+raw,13_od_site_dong.csv,main,단위,NUMERIC_time_peak_min,0,0,0,checked,[],time_peak_min 유한 숫자 형식
+raw,13_od_site_dong.csv,main,단위,STRING_adm_cd2,0,0,0,checked,[],adm_cd2 문자열 보존
+raw,13_od_site_dong.csv,main,단위,CODE_FORMAT_adm_cd2,0,0,0,checked,[],행정동 코드 자릿수
+raw,13_od_site_dong.csv,main,단위,STRING_site_id,0,0,0,checked,[],site_id 문자열 보존
+raw,13_od_site_dong.csv,main,범위,RANGE_straight_km,0,0,0,checked,[],"straight_km: [0, None]"
+raw,13_od_site_dong.csv,main,범위,RANGE_road_km,0,0,0,checked,[],"road_km: [0, None]"
+raw,13_od_site_dong.csv,main,범위,RANGE_time_offpeak_min,0,0,0,checked,[],"time_offpeak_min: [0, None]"
+raw,13_od_site_dong.csv,main,범위,RANGE_time_peak_min,0,0,0,checked,[],"time_peak_min: [0, None]"
+raw,13_od_site_dong.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,13_od_site_dong.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,13_od_site_dong.csv,main,관계,DONG_FOREIGN_KEY,0,0,0,checked,[],01 행정동 코드 참조
+raw,13_od_site_dong.csv,main,관계,OD_SITE_REFERENCE,0,0,0,checked,[],원본 후보지 ID 참조; 제외 후보지 OD는 보존
+raw,13_od_site_dong.csv,main,관계,OD_ROAD_DISTANCE,0,0,0,checked,[],도로거리>=직선거리
+raw,13_od_site_dong.csv,main,관계,OD_DONG_COVERAGE,0,0,0,checked,[],후보지별 모든 행정동 OD 존재
+raw,13_od_site_dong.csv,main,관계,ACTIVE_SITE_OD,0,0,0,checked,[],서울 후보지 OD 존재
+raw,13_od_site_dong.csv,main,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,13_od_site_dong.csv,main,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,13_od_site_dong.csv,main,상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,14_rider_supply.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),결측,REQUIRED_area_class,0,0,0,checked,[],area_class 필수값
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),결측,REQUIRED_hour_from,0,0,0,checked,[],hour_from 필수값
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),결측,REQUIRED_hour_to,0,0,0,checked,[],hour_to 필수값
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),결측,REQUIRED_max_contract_riders_per_hub,0,0,0,checked,[],max_contract_riders_per_hub 필수값
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),단위,NUMERIC_hour_from,0,0,0,checked,[],hour_from 유한 숫자 형식
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),단위,NUMERIC_hour_to,0,0,0,checked,[],hour_to 유한 숫자 형식
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),단위,NUMERIC_max_contract_riders_per_hub,0,0,0,checked,[],max_contract_riders_per_hub 유한 숫자 형식
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),범위,RANGE_hour_from,0,0,0,checked,[],"hour_from: [0, 24]"
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),범위,RANGE_hour_to,0,0,0,checked,[],"hour_to: [0, 24]"
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),범위,RANGE_max_contract_riders_per_hub,0,0,0,checked,[],"max_contract_riders_per_hub: [0, None]"
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),상태값,ENUM_area_class,0,0,0,checked,[],"area_class 허용값 ['A', 'B', 'C']"
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),시간대,SUPPLY_INTERVAL,0,0,0,checked,[],공급 시간 구간 시작<끝
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),시간대,SUPPLY_GAP_A,0,0,0,checked,[],권역 내 인접 공급 구간의 공백/겹침
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),시간대,SUPPLY_GAP_B,0,0,0,checked,[],권역 내 인접 공급 구간의 공백/겹침
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),시간대,SUPPLY_GAP_C,0,0,0,checked,[],권역 내 인접 공급 구간의 공백/겹침
+raw,14_rider_supply.csv,[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준),좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),결측,REQUIRED_weather,0,0,0,checked,[],weather 필수값
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),결측,REQUIRED_cap_multiplier,0,0,0,checked,[],cap_multiplier 필수값
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),단위,NUMERIC_cap_multiplier,0,0,0,checked,[],cap_multiplier 유한 숫자 형식
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),범위,RANGE_cap_multiplier,0,0,0,checked,[],"cap_multiplier: [0, None]"
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),상태값,ENUM_weather,0,0,0,checked,[],"weather 허용값 ['clear', 'rain', 'heavy_rain', 'snow']"
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,14_rider_supply.csv,[B] 기상별 공급 계수(내림 처리),시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,15_cost_parameters.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,15_cost_parameters.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,15_cost_parameters.csv,main,결측,REQUIRED_category,0,0,0,checked,[],category 필수값
+raw,15_cost_parameters.csv,main,결측,REQUIRED_parameter,0,0,0,checked,[],parameter 필수값
+raw,15_cost_parameters.csv,main,결측,REQUIRED_value,0,0,0,checked,[],value 필수값
+raw,15_cost_parameters.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,15_cost_parameters.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,15_cost_parameters.csv,main,단위,COST_NUMERIC,0,0,0,checked,[],기간·현금시점 외 파라미터는 숫자
+raw,15_cost_parameters.csv,main,단위,COST_UNIT_REQUIRED,0,0,0,checked,[],수치 파라미터 단위 필수
+raw,15_cost_parameters.csv,main,범위,COST_NONNEGATIVE,0,0,0,checked,[],비용 파라미터 음수 금지
+raw,15_cost_parameters.csv,main,범위,COST_RATIO,0,0,0,checked,[],비율/연율은 0~1
+raw,15_cost_parameters.csv,main,좌표,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,15_cost_parameters.csv,main,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,15_cost_parameters.csv,main,상태값,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,16_vrp_benchmark_orders.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,16_vrp_benchmark_orders.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_instance,0,0,0,checked,[],instance 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_order_id,0,0,0,checked,[],order_id 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_order_time,0,0,0,checked,[],order_time 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_order_min,0,0,0,checked,[],order_min 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_adm_cd2,0,0,0,checked,[],adm_cd2 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_gu,0,0,0,checked,[],gu 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_cust_lat,0,0,0,checked,[],cust_lat 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_cust_lon,0,0,0,checked,[],cust_lon 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_building_type,0,0,0,checked,[],building_type 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_basket_krw,0,0,0,checked,[],basket_krw 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_items,0,0,0,checked,[],items 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_weight_kg,0,0,0,checked,[],weight_kg 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_has_chilled,0,0,0,checked,[],has_chilled 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_has_frozen,0,0,0,checked,[],has_frozen 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_delivery_fee_krw,0,0,0,checked,[],delivery_fee_krw 필수값
+raw,16_vrp_benchmark_orders.csv,main,결측,REQUIRED_pick_std_min,0,0,0,checked,[],pick_std_min 필수값
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_order_min,0,0,0,checked,[],order_min 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_cust_lat,0,0,0,checked,[],cust_lat 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_cust_lon,0,0,0,checked,[],cust_lon 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_basket_krw,0,0,0,checked,[],basket_krw 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_items,0,0,0,checked,[],items 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_weight_kg,0,0,0,checked,[],weight_kg 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_has_chilled,0,0,0,checked,[],has_chilled 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_has_frozen,0,0,0,checked,[],has_frozen 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_delivery_fee_krw,0,0,0,checked,[],delivery_fee_krw 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,NUMERIC_pick_std_min,0,0,0,checked,[],pick_std_min 유한 숫자 형식
+raw,16_vrp_benchmark_orders.csv,main,단위,STRING_adm_cd2,0,0,0,checked,[],adm_cd2 문자열 보존
+raw,16_vrp_benchmark_orders.csv,main,단위,CODE_FORMAT_adm_cd2,0,0,0,checked,[],행정동 코드 자릿수
+raw,16_vrp_benchmark_orders.csv,main,단위,STRING_order_id,0,0,0,checked,[],order_id 문자열 보존
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_order_min,0,0,0,checked,[],"order_min: [0, None]"
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_basket_krw,0,0,0,checked,[],"basket_krw: [0, None]"
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_items,0,0,0,checked,[],"items: [1e-06, None]"
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_weight_kg,0,0,0,checked,[],"weight_kg: [0, None]"
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_has_chilled,0,0,0,checked,[],"has_chilled: [0, None]"
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_has_frozen,0,0,0,checked,[],"has_frozen: [0, None]"
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_delivery_fee_krw,0,0,0,checked,[],"delivery_fee_krw: [0, None]"
+raw,16_vrp_benchmark_orders.csv,main,범위,RANGE_pick_std_min,0,0,0,checked,[],"pick_std_min: [0, None]"
+raw,16_vrp_benchmark_orders.csv,main,상태값,ENUM_building_type,0,0,0,checked,[],"building_type 허용값 ['아파트', '기타']"
+raw,16_vrp_benchmark_orders.csv,main,상태값,ENUM_has_chilled,0,0,0,checked,[],"has_chilled 허용값 [0, 1]"
+raw,16_vrp_benchmark_orders.csv,main,상태값,ENUM_has_frozen,0,0,0,checked,[],"has_frozen 허용값 [0, 1]"
+raw,16_vrp_benchmark_orders.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,16_vrp_benchmark_orders.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,16_vrp_benchmark_orders.csv,main,좌표,COORD_cust_lat,0,0,0,checked,[],서울 점검용 경위도 범위 및 위도=경도 검사
+raw,16_vrp_benchmark_orders.csv,main,관계,DONG_FOREIGN_KEY,0,0,0,checked,[],01 행정동 코드 참조
+raw,16_vrp_benchmark_orders.csv,main,관계,DONG_MATCH_gu,0,0,0,checked,[],행정동 코드와 구·동 이름 일치
+raw,16_vrp_benchmark_orders.csv,main,시간대,16_TIME_MISMATCH,26,26,0,checked,"[{""order_id"":""BM1-0022"",""adm_cd2"":""1162068500""},{""order_id"":""BM1-0409"",""adm_cd2"":""1162052500""},{""order_id"":""BM1-0434"",""adm_cd2"":""1162052500""}]","사전 목록 밖에서 발견한 결함: 원문 보존, 계산은 order_min"
+raw,16_vrp_benchmark_orders.csv,main,시간대,BENCH_TIME_FORMAT,0,0,0,checked,[],HH:MM:SS 표기
+raw,16_vrp_benchmark_orders.csv,main,시간대,BENCH_SERVICE_HOURS,0,0,0,checked,[],계산용 order_min의 접수 시간대
+raw,16_vrp_benchmark_orders.csv,main,관계,BENCH_INSTANCE,0,0,0,checked,[],벤치마크 메타 참조
+raw,16b_vrp_benchmark_meta.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,16b_vrp_benchmark_meta.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_instance,0,0,0,checked,[],instance 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_hub_site_id,0,0,0,checked,[],hub_site_id 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_hub_lat,0,0,0,checked,[],hub_lat 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_hub_lon,0,0,0,checked,[],hub_lon 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_hub_gu,0,0,0,checked,[],hub_gu 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_hub_type,0,0,0,checked,[],hub_type 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_rider_area_class,0,0,0,checked,[],rider_area_class 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_weather,0,0,0,checked,[],weather 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_description,0,0,0,checked,[],description 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_service_radius_road_km,0,0,0,checked,[],service_radius_road_km 필수값
+raw,16b_vrp_benchmark_meta.csv,main,결측,REQUIRED_n_orders,0,0,0,checked,[],n_orders 필수값
+raw,16b_vrp_benchmark_meta.csv,main,단위,NUMERIC_hub_lat,0,0,0,checked,[],hub_lat 유한 숫자 형식
+raw,16b_vrp_benchmark_meta.csv,main,단위,NUMERIC_hub_lon,0,0,0,checked,[],hub_lon 유한 숫자 형식
+raw,16b_vrp_benchmark_meta.csv,main,단위,NUMERIC_service_radius_road_km,0,0,0,checked,[],service_radius_road_km 유한 숫자 형식
+raw,16b_vrp_benchmark_meta.csv,main,단위,NUMERIC_n_orders,0,0,0,checked,[],n_orders 유한 숫자 형식
+raw,16b_vrp_benchmark_meta.csv,main,단위,STRING_hub_site_id,0,0,0,checked,[],hub_site_id 문자열 보존
+raw,16b_vrp_benchmark_meta.csv,main,범위,RANGE_service_radius_road_km,0,0,0,checked,[],"service_radius_road_km: [0, None]"
+raw,16b_vrp_benchmark_meta.csv,main,범위,RANGE_n_orders,0,0,0,checked,[],"n_orders: [0, None]"
+raw,16b_vrp_benchmark_meta.csv,main,상태값,ENUM_rider_area_class,0,0,0,checked,[],"rider_area_class 허용값 ['A', 'B', 'C']"
+raw,16b_vrp_benchmark_meta.csv,main,상태값,ENUM_hub_type,0,0,0,checked,[],"hub_type 허용값 ['S', 'M', 'L']"
+raw,16b_vrp_benchmark_meta.csv,main,상태값,ENUM_weather,0,0,0,checked,[],"weather 허용값 ['clear', 'rain', 'heavy_rain', 'snow']"
+raw,16b_vrp_benchmark_meta.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,16b_vrp_benchmark_meta.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,16b_vrp_benchmark_meta.csv,main,좌표,COORD_hub_lat,0,0,0,checked,[],서울 점검용 경위도 범위 및 위도=경도 검사
+raw,16b_vrp_benchmark_meta.csv,main,관계,GU_FOREIGN_KEY_hub_gu,0,0,0,checked,[],01 자치구 참조
+raw,16b_vrp_benchmark_meta.csv,main,관계,BENCH_COUNT,0,0,0,checked,[],인스턴스별 주문 수 일치
+raw,16b_vrp_benchmark_meta.csv,main,관계,BENCH_HUB,0,0,0,checked,[],벤치마크 거점 존재
+raw,16b_vrp_benchmark_meta.csv,main,시간대,NOT_APPLICABLE,0,0,0,not_applicable,[],해당 구획에 이 검사 대상 컬럼이 없음
+raw,17_travel_time_check.csv,file,관계,SECTION_SCHEMA,0,0,0,checked,[],설정의 구획 목록과 실제 구획 일치
+raw,17_travel_time_check.csv,main,관계,COLUMN_SCHEMA,0,0,0,checked,[],필수 컬럼 누락: 
+raw,17_travel_time_check.csv,main,결측,REQUIRED_case_id,0,0,0,checked,[],case_id 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_from_lat,0,0,0,checked,[],from_lat 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_from_lon,0,0,0,checked,[],from_lon 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_from_gu,0,0,0,checked,[],from_gu 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_to_lat,0,0,0,checked,[],to_lat 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_to_lon,0,0,0,checked,[],to_lon 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_to_gu,0,0,0,checked,[],to_gu 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_depart_hour,0,0,0,checked,[],depart_hour 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_weather,0,0,0,checked,[],weather 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_straight_km,0,0,0,checked,[],straight_km 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_cross_river,0,0,0,checked,[],cross_river 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_road_km,0,0,0,checked,[],road_km 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_speed_kmh,0,0,0,checked,[],speed_kmh 필수값
+raw,17_travel_time_check.csv,main,결측,REQUIRED_travel_min,0,0,0,checked,[],travel_min 필수값
+raw,17_travel_time_check.csv,main,단위,NUMERIC_from_lat,0,0,0,checked,[],from_lat 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_from_lon,0,0,0,checked,[],from_lon 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_to_lat,0,0,0,checked,[],to_lat 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_to_lon,0,0,0,checked,[],to_lon 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_depart_hour,0,0,0,checked,[],depart_hour 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_straight_km,0,0,0,checked,[],straight_km 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_road_km,0,0,0,checked,[],road_km 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_speed_kmh,0,0,0,checked,[],speed_kmh 유한 숫자 형식
+raw,17_travel_time_check.csv,main,단위,NUMERIC_travel_min,0,0,0,checked,[],travel_min 유한 숫자 형식
+raw,17_travel_time_check.csv,main,범위,RANGE_depart_hour,0,0,0,checked,[],"depart_hour: [0, 24]"
+raw,17_travel_time_check.csv,main,범위,RANGE_straight_km,0,0,0,checked,[],"straight_km: [0, None]"
+raw,17_travel_time_check.csv,main,범위,RANGE_road_km,0,0,0,checked,[],"road_km: [0, None]"
+raw,17_travel_time_check.csv,main,범위,RANGE_speed_kmh,0,0,0,checked,[],"speed_kmh: [0, None]"
+raw,17_travel_time_check.csv,main,범위,RANGE_travel_min,0,0,0,checked,[],"travel_min: [0, None]"
+raw,17_travel_time_check.csv,main,상태값,ENUM_weather,0,0,0,checked,[],"weather 허용값 ['clear', 'rain', 'heavy_rain', 'snow']"
+raw,17_travel_time_check.csv,main,상태값,ENUM_cross_river,0,0,0,checked,[],"cross_river 허용값 ['Y', 'N']"
+raw,17_travel_time_check.csv,main,중복,EXACT_DUPLICATE,0,0,0,checked,[],완전 중복의 두 번째 이후 행
+raw,17_travel_time_check.csv,main,중복,KEY_DUPLICATE,0,0,0,checked,[],복합 식별 키 중복
+raw,17_travel_time_check.csv,main,좌표,COORD_from_lat,0,0,0,checked,[],서울 점검용 경위도 범위 및 위도=경도 검사
+raw,17_travel_time_check.csv,main,좌표,COORD_to_lat,0,0,0,checked,[],서울 점검용 경위도 범위 및 위도=경도 검사
+raw,17_travel_time_check.csv,main,관계,GU_FOREIGN_KEY_from_gu,0,0,0,checked,[],01 자치구 참조
+raw,17_travel_time_check.csv,main,관계,GU_FOREIGN_KEY_to_gu,0,0,0,checked,[],01 자치구 참조
+raw,17_travel_time_check.csv,main,결측,CROSS_BRIDGE_REQUIRED,0,0,0,checked,[],한강 횡단 교량 필수
+raw,17_travel_time_check.csv,main,관계,CROSS_BRIDGE_ALLOWED,0,0,0,checked,[],이륜차 허용 교량 참조
+raw,17_travel_time_check.csv,main,시간대,DEPART_HOUR,0,0,0,checked,[],출발 시간 0<=h<24
+raw,02_dong_boundary.geojson,features,중복,GEO_DUPLICATE,0,0,0,checked,[],GeoJSON 동 코드 유일성
+raw,02_dong_boundary.geojson,features,관계,GEO_CODE_SET,0,0,0,checked,[],GeoJSON/01 adm_cd2 집합 일치; 지도 형상 검사는 요청 범위 밖
+raw,02_dong_boundary.geojson,features,관계,GEO_MATCH_adm_cd,0,0,0,checked,[],GeoJSON/01 코드·이름 매핑 일치
+raw,02_dong_boundary.geojson,features,관계,GEO_MATCH_gu,0,0,0,checked,[],GeoJSON/01 코드·이름 매핑 일치
+raw,02_dong_boundary.geojson,features,관계,GEO_MATCH_dong,0,0,0,checked,[],GeoJSON/01 코드·이름 매핑 일치

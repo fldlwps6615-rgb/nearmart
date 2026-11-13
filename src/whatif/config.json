@@ -1,0 +1,11 @@
+{
+  "default_plan_version": "v3",
+  "markets": ["low", "base", "high"],
+  "demand_band": "mid",
+  "coverage_years": [2027, 2036, 2037],
+  "orders_year": 2036,
+  "w1": {"start_year": 2028, "increase": 0.12},
+  "w2": {"start_year": 2030, "competitor_count": 12},
+  "forced_relocation": {"depart_hour": 18, "weather": "clear"},
+  "discount_rates": {"DISCOUNT_08": 0.08, "DISCOUNT_16": 0.16}
+}

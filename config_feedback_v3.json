@@ -1,0 +1,9 @@
+{
+  "base_config": "config.json",
+  "runtime_limit_seconds": 1800,
+  "search_workers": 10,
+  "funding_scenario": "low",
+  "funding_band": "mid",
+  "capacity_sensitivity_m": [873, 1000, 1261],
+  "root_cost_tolerance_krw": 0.00001
+}

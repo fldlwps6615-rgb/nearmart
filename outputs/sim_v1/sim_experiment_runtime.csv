@@ -1,0 +1,2 @@
+﻿grid,workers,combinations,repetitions_per_case,attempted_repetitions,completed_repetitions,feasible_cases,estimated_full_seconds,estimated_reduced_seconds,execution_seconds,runtime_limit_seconds,checks_passed,checks_total,initial_completed_repetitions,recovered_repetitions,delivered_orders,recovery_seconds
+reduced,8,204,20,4080,4080,116,2036.655985371326,778.7214061713894,354.13562688689126,900,19,19,3450,630,4826880,60.07755118688874

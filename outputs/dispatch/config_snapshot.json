@@ -1,0 +1,193 @@
+{
+  "sla_min": 60,
+  "min_contract_hourly_krw": 17860,
+  "max_pickers": 10,
+  "fte_hours_per_month": 174,
+  "open_hour": 9,
+  "last_order_min": 1410,
+  "planning_end_hour": 48,
+  "tail_pickers": 2,
+  "p0_max_orders": 3,
+  "p0_radius_km": 1.2,
+  "candidate_neighbors": 16,
+  "min_contract_riders": 1,
+  "staffing_intercustomer_min": 2.0,
+  "search": {
+    "seconds_per_instance": 600,
+    "progress_interval_sec": 30,
+    "shuffle_seed": 20261113,
+    "max_coarse_candidates": 144,
+    "refine_top": 3,
+    "reduction_sweeps": 2,
+    "coarse_wait": [
+      4,
+      8,
+      12
+    ],
+    "coarse_target": [
+      3,
+      4,
+      5
+    ],
+    "coarse_margin": [
+      2,
+      5
+    ],
+    "coarse_picker_factor": [
+      1.05,
+      1.2
+    ],
+    "coarse_rider_factor": [
+      0.85,
+      1.05,
+      1.4
+    ],
+    "coarse_tail": [
+      2,
+      4
+    ],
+    "coarse_blocks": [
+      [],
+      [
+        {
+          "start_hour": 21,
+          "hours": 4,
+          "count": 2
+        }
+      ],
+      [
+        {
+          "start_hour": 21,
+          "hours": 4,
+          "count": 4
+        }
+      ],
+      [
+        {
+          "start_hour": 21,
+          "hours": 4,
+          "count": 6
+        }
+      ],
+      [
+        {
+          "start_hour": 18,
+          "hours": 8,
+          "count": 2
+        }
+      ],
+      [
+        {
+          "start_hour": 17,
+          "hours": 4,
+          "count": 2
+        },
+        {
+          "start_hour": 21,
+          "hours": 4,
+          "count": 4
+        }
+      ],
+      [
+        {
+          "start_hour": 10,
+          "hours": 8,
+          "count": 3
+        },
+        {
+          "start_hour": 17,
+          "hours": 8,
+          "count": 3
+        }
+      ],
+      [
+        {
+          "start_hour": 10,
+          "hours": 8,
+          "count": 4
+        },
+        {
+          "start_hour": 17,
+          "hours": 8,
+          "count": 4
+        }
+      ],
+      [
+        {
+          "start_hour": 10,
+          "hours": 8,
+          "count": 5
+        },
+        {
+          "start_hour": 17,
+          "hours": 8,
+          "count": 5
+        }
+      ]
+    ],
+    "fine_wait_delta": [
+      -2,
+      2
+    ],
+    "fine_margin_delta": [
+      -1,
+      1
+    ],
+    "fine_hour_wait_step": 2,
+    "anchor_candidates": [
+      {
+        "wait": 8,
+        "target": 5,
+        "margin": 2,
+        "picker_factor": 1.05,
+        "rider_factor": 1.4,
+        "blocks": [
+          {
+            "start_hour": 10,
+            "hours": 8,
+            "count": 3
+          },
+          {
+            "start_hour": 17,
+            "hours": 8,
+            "count": 3
+          }
+        ],
+        "tail": 2
+      }
+    ],
+    "baseline_plans": {
+      "P0": {
+        "wait": 0,
+        "target": 3,
+        "margin": 0,
+        "picker_factor": 1.15,
+        "rider_factor": 1.0,
+        "blocks": [],
+        "tail": 2
+      },
+      "P1": {
+        "wait": 8,
+        "target": 5,
+        "margin": 3,
+        "picker_factor": 1.15,
+        "rider_factor": 1.0,
+        "blocks": [],
+        "tail": 2
+      }
+    }
+  },
+  "verification_tolerance": 1e-06,
+  "expected_solo_mean_min": {
+    "BM1": 14.5,
+    "BM2": 18.7,
+    "BM3": 15.0
+  },
+  "expected_solo_max_min": {
+    "BM1": 26.4,
+    "BM2": 30.2,
+    "BM3": 24.8
+  },
+  "refinement_end_hour": 26,
+  "shutdown_after_completion": true
+}

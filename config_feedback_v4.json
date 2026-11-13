@@ -1,0 +1,17 @@
+{
+  "network_settings": "config_feedback_v3.json",
+  "runtime_limit_seconds": 2100,
+  "staffing_limit_seconds": 1000,
+  "staffing_workers": 12,
+  "candidate_budget": 132,
+  "staffing_rounds": 3,
+  "robust_neighborhood_candidates": 14,
+  "validation_attempts": 4,
+  "interpolation": [0, 0.25, 0.5, 0.75, 1],
+  "staffing_seed": 2026111304,
+  "training_repetitions": 5,
+  "validation_repetitions": 20,
+  "minimum_mean_ontime": 0.90,
+  "min_contract_hourly_krw": 17860,
+  "contribution_year": 2029
+}

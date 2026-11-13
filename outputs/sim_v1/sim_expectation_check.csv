@@ -1,0 +1,9 @@
+﻿check,radius_min,metric,value,reference_low,reference_high,matches,staffing_feasible,orders_per_day,employed_share
+M형 A등급 평일 맑음 상한,8,max_orders_per_day,1290.0,1000,1300.0,True,True,,
+M형 A등급 평일 맑음 라이더 비용,8,rider_cost_per_order,3821.706412363191,3300,,,True,1032.0,0.1250968992248062
+M형 A등급 평일 맑음 상한,12,max_orders_per_day,,1000,1300.0,False,True,,
+M형 A등급 평일 맑음 라이더 비용,12,rider_cost_per_order,4126.179335620811,3300,,,False,1032.0,0.1872093023255814
+M형 A등급 평일 맑음 상한,15,max_orders_per_day,,1000,1300.0,False,True,,
+M형 A등급 평일 맑음 라이더 비용,15,rider_cost_per_order,8059.623095429031,4000,,,False,1032.0,0.999031007751938
+M형 A등급 평일 맑음 상한,20,max_orders_per_day,,1000,1300.0,False,True,,
+M형 A등급 평일 맑음 라이더 비용,20,rider_cost_per_order,10961.162567940837,4000,,True,True,1032.0,0.9996124031007753

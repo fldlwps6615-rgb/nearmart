@@ -1,0 +1,4 @@
+﻿alternative,version,scenario,discount_rate,params,npv_eok,max_funding_eok,funding_within_limit,ebitda_positive_year,payback_year,orders_per_day_2031
+B,v3,low,0.12,,-321.26,858.09,False,미전환,미회수,11701.8
+B,v3,base,0.12,,-294.25,771.61,False,미전환,미회수,12095.4
+B,v3,high,0.12,,-284.96,757.91,False,미전환,미회수,12298.4

@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "selected_alternatives": [
+    "A",
+    "B",
+    "C",
+    "B2"
+  ],
+  "evaluations": 139139,
+  "seconds": 860.2519890000003,
+  "config_sha256": "122d9c0036e0a50ea596ec14ad9a59182ff1055d3495ed6bd61b6277d6fab8fc",
+  "checks_passed": 56
+}

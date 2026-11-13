@@ -1,0 +1,15 @@
+﻿metric,actual,expected,passed,detail
+three_factor_division,1.4210854715202004e-14,0.0,1,성숙 하루 주문 ÷ 세대수 ÷ 경쟁 계수 ÷ 배송시간 계수 ÷ 구색 계수; 역산 최대 절대오차(건/일)
+daily_order_total,77717.0,77717.0,1,
+dong_count,427.0,427.0,1,
+forecast_rows,26901.0,26901.0,1,
+rate_interval_order,427.0,427.0,1,
+forecast_interval_order,26901.0,26901.0,1,
+hour_share_sum,0.0,0.0,1,4개 그룹 각각 합계 1
+hour_order_total,77717.0,77717.0,1,
+basket_total_rebuilt,1912787400.0,1912787400.0,1,
+ramp_accepted_tau,5.0,5.0,1,
+market_multiplication,4.440892098500626e-16,0.0,1,인구·주문율·경쟁을 통제하면 합계 비율=07[B] 시장지수
+base_year_no_delivery_assortment_ramp,0.0,0.0,1,2026년 잠재 주문=세대수×최종 주문율×경쟁만; 배송시간·구색·램프업 수준 추가 곱 없음
+csv_year_totals,2.5050218867565945e-16,1e-09,1,"시나리오·연도 키로 정렬 후 하한·중앙·상한 비교, 최대 절대차 7.276e-12건/일"
+raw_files_unchanged,24.0,24.0,1,

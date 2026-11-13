@@ -1,0 +1,39 @@
+{
+  "status": "complete",
+  "instances": [
+    {
+      "instance": "BM1",
+      "elapsed_sec": 278.2051842000001,
+      "timed_out": false,
+      "evaluated": 569,
+      "feasible": true,
+      "selected_policy": "P2",
+      "configured_limit_sec": 600
+    },
+    {
+      "instance": "BM2",
+      "elapsed_sec": 586.7745181999999,
+      "timed_out": false,
+      "evaluated": 511,
+      "feasible": true,
+      "selected_policy": "P2",
+      "configured_limit_sec": 600
+    },
+    {
+      "instance": "BM3",
+      "elapsed_sec": 528.4877553999995,
+      "timed_out": false,
+      "evaluated": 541,
+      "feasible": true,
+      "selected_policy": "P2",
+      "configured_limit_sec": 600
+    }
+  ],
+  "elapsed_sec": 1394.3083772999998,
+  "source_unchanged": true,
+  "travel_module_unchanged": true,
+  "report_ready": true,
+  "reason": "저장된 제출 T3와 근무기록 독립 재계산 완료",
+  "verification_checks": 50,
+  "verification_failures": 0
+}

@@ -1,0 +1,6 @@
+﻿metric,bm2_value,lower,upper,simulation_mean,simulation_p05,simulation_p95,observed_min,observed_max,evaluated_value,statistic_scope,passed,site_id,radius_km,orders_per_day,policy,n_repetitions,completed_repetitions,staffing_trials,legal_staffing,gate_passed,delivered_orders,undelivered_orders,execution_seconds
+ontime_rate_raw,1.0,0.97,1.0,0.22839016653449642,0.17846946867565427,0.2954797779540047,0.05868358445678035,0.30452022204599527,0.22839016653449642,all_repetitions,False,P2,3.8,1261,P2,20,0,36,False,False,18422,6798,41.653511500000604
+cost_per_order_krw,5288.515548919024,4231.0,6347.0,,,,,,,completed_repetitions_only,False,P2,3.8,1261,P2,20,0,36,False,False,18422,6798,41.653511500000604
+undelivered_orders,0.0,0.0,0.0,339.9,296.0,381.25000000000006,296.0,443.0,443.0,all_repetitions,False,P2,3.8,1261,P2,20,0,36,False,False,18422,6798,41.653511500000604
+bike_bays_max,12.0,0.0,13.0,13.85,12.0,15.100000000000001,12.0,17.0,17.0,all_repetitions,False,P2,3.8,1261,P2,20,0,36,False,False,18422,6798,41.653511500000604
+contract_hourly_income_krw,18469.43178054392,17860.0,inf,12366.898627861754,11908.434477078716,12885.952884290082,11060.817346745007,12960.678463796197,11060.817346745007,all_repetitions,False,P2,3.8,1261,P2,20,0,36,False,False,18422,6798,41.653511500000604

@@ -1,0 +1,18 @@
+﻿rule,key,value,unit,note
+competition_multiplier,0개,1.0,배수,행정동 대표점 반경 2.5km(직선) 안의 경쟁사 A 운영 거점 수
+competition_multiplier,1개,0.72,배수,
+competition_multiplier,2개 이상,0.58,배수,
+delivery_time_multiplier,0~25분,1.12,배수,해당 행정동 주문의 연평균 배송시간(주문~전달). 35~45분이 기준(1.00)
+delivery_time_multiplier,25~35분,1.05,배수,해당 행정동 주문의 연평균 배송시간(주문~전달). 35~45분이 기준(1.00)
+delivery_time_multiplier,35~45분,1.0,배수,해당 행정동 주문의 연평균 배송시간(주문~전달). 35~45분이 기준(1.00)
+delivery_time_multiplier,45~55분,0.85,배수,해당 행정동 주문의 연평균 배송시간(주문~전달). 35~45분이 기준(1.00)
+delivery_time_multiplier,55분 초과,0.65,배수,해당 행정동 주문의 연평균 배송시간(주문~전달). 35~45분이 기준(1.00)
+late_penalty,demand,0.6,계수,행정동 수요 x (1 - 0.6 x 해당 행정동 60분 초과 비율). 같은 해에 즉시 반영
+late_penalty,coupon,2000.0,원/건,60분 초과 주문에 보상쿠폰(비용)
+assortment_multiplier,S/M/L,,배수,04_hub_types.csv의 assortment_demand_factor 적용
+delivery_fee_policy,fee,3000.0,원,"장바구니 40,000원 미만 주문에 부과(2027년 기준, 연 2% 인상)"
+delivery_fee_policy,free_threshold,40000.0,원,이 금액 이상 무료배송
+service_hours,order_acceptance,,,"09:00~23:30 주문 접수, 모든 거점 동일"
+snow_day(what-if),demand,1.3,배수,폭설일 수요(파일럿 기간에 눈 없음 - 마케팅팀 추정)
+snow_day(what-if),speed,0.65,배수,12_speed_profile 기상계수와 동일
+snow_day(what-if),rider_cap,0.55,배수,14_rider_supply 기상계수와 동일

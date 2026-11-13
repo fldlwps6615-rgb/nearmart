@@ -1,0 +1,682 @@
+{
+  "compared_cells": 96,
+  "max_absolute_difference_krw": 0,
+  "all_match_to_won": true,
+  "input_edit_recalculated": true,
+  "engine": "Artifact Tool",
+  "native_excel_recalculation_verified": false,
+  "differences": [
+    {
+      "year": 2027,
+      "field": "orders",
+      "actual": 328500,
+      "expected": 328500,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "orders",
+      "actual": 328500,
+      "expected": 328500,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "product_revenue",
+      "actual": 13797000000,
+      "expected": 13797000000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "product_revenue",
+      "actual": 14072940000,
+      "expected": 14072940000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "delivery_revenue",
+      "actual": 394200000,
+      "expected": 394200000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "delivery_revenue",
+      "actual": 402084000,
+      "expected": 402084000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "revenue",
+      "actual": 14191200000,
+      "expected": 14191200000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "revenue",
+      "actual": 14475024000,
+      "expected": 14475024000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "cogs",
+      "actual": 9381960000,
+      "expected": 9381960000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "cogs",
+      "actual": 9569599200,
+      "expected": 9569599200,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "payment_fee",
+      "actual": 312206400,
+      "expected": 312206400,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "payment_fee",
+      "actual": 318450528,
+      "expected": 318450528,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "packaging",
+      "actual": 147825000,
+      "expected": 147825000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "packaging",
+      "actual": 150781500,
+      "expected": 150781500,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "cold_packaging",
+      "actual": 36956250,
+      "expected": 36956250,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "cold_packaging",
+      "actual": 37695375,
+      "expected": 37695375,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "shrink",
+      "actual": 248345999.99999997,
+      "expected": 248345999.99999997,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "shrink",
+      "actual": 253312919.99999997,
+      "expected": 253312919.99999997,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "ongoing_marketing",
+      "actual": 275940000,
+      "expected": 275940000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "ongoing_marketing",
+      "actual": 281458800,
+      "expected": 281458800,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "it_cost",
+      "actual": 49275000,
+      "expected": 49275000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "it_cost",
+      "actual": 49275000,
+      "expected": 49275000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "late_coupon",
+      "actual": 32850000,
+      "expected": 32850000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "late_coupon",
+      "actual": 32850000,
+      "expected": 32850000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "external_quick",
+      "actual": 82125000,
+      "expected": 82125000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "external_quick",
+      "actual": 82125000,
+      "expected": 82125000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "contract_rider_cost",
+      "actual": 827820000,
+      "expected": 827820000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "contract_rider_cost",
+      "actual": 848515499.9999999,
+      "expected": 848515499.9999999,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "employed_rider_cost",
+      "actual": 170929216.81034482,
+      "expected": 170929216.81034482,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "employed_rider_cost",
+      "actual": 176057093.31465515,
+      "expected": 176057093.31465515,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "picker_cost",
+      "actual": 474518250.00000006,
+      "expected": 474518250.00000006,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "picker_cost",
+      "actual": 488753797.50000006,
+      "expected": 488753797.50000006,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "rent",
+      "actual": 68040000,
+      "expected": 68040000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "rent",
+      "actual": 68040000,
+      "expected": 68040000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "maintenance",
+      "actual": 21480000,
+      "expected": 21480000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "maintenance",
+      "actual": 21909600,
+      "expected": 21909600,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "fixed_staff",
+      "actual": 180000000,
+      "expected": 180000000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "fixed_staff",
+      "actual": 185400000,
+      "expected": 185400000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "utilities",
+      "actual": 60000000,
+      "expected": 60000000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "utilities",
+      "actual": 61200000,
+      "expected": 61200000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "replenish",
+      "actual": 91250000,
+      "expected": 91250000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "replenish",
+      "actual": 93531249.99999999,
+      "expected": 93531249.99999999,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "launch_marketing",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "launch_marketing",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "restoration",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "restoration",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "hq_cost",
+      "actual": 5500000000,
+      "expected": 5500000000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "hq_cost",
+      "actual": 5665000000,
+      "expected": 5665000000,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "ebitda",
+      "actual": -3770321116.8103447,
+      "expected": -3770321116.8103447,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "ebitda",
+      "actual": -3908931563.8146553,
+      "expected": -3908931563.8146553,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "depreciation",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "depreciation",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "ebit",
+      "actual": -3770321116.8103447,
+      "expected": -3770321116.8103447,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "ebit",
+      "actual": -3908931563.8146553,
+      "expected": -3908931563.8146553,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "tax_loss_used",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "tax_loss_used",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "taxable_profit",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "taxable_profit",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "tax_loss_carryforward",
+      "actual": 3828071116.8103447,
+      "expected": 3828071116.8103447,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "tax_loss_carryforward",
+      "actual": 7737002680.625,
+      "expected": 7737002680.625,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "tax",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "tax",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "net_income",
+      "actual": -3770321116.8103447,
+      "expected": -3770321116.8103447,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "net_income",
+      "actual": -3908931563.8146553,
+      "expected": -3908931563.8146553,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "capex_initial",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "capex_initial",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "capex_refresh",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "capex_refresh",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "capex",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "capex",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "deposit_paid",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "deposit_paid",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "deposit_returned",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "deposit_returned",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "inventory_balance",
+      "actual": 231336000,
+      "expected": 231336000,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "inventory_balance",
+      "actual": 235962720,
+      "expected": 235962720,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "inventory_investment",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "inventory_investment",
+      "actual": 4626720,
+      "expected": 4626720,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "inventory_recovery",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "inventory_recovery",
+      "actual": 0,
+      "expected": 0,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "operating_cf",
+      "actual": -3770321116.8103447,
+      "expected": -3770321116.8103447,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "operating_cf",
+      "actual": -3913558283.8146553,
+      "expected": -3913558283.8146553,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "cash_flow",
+      "actual": -3770321116.8103447,
+      "expected": -3770321116.8103447,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "cash_flow",
+      "actual": -3913558283.8146553,
+      "expected": -3913558283.8146553,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "cum_cash_flow",
+      "actual": -3748071116.8103447,
+      "expected": -3748071116.8103447,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "cum_cash_flow",
+      "actual": -7661629400.625,
+      "expected": -7661629400.625,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "discounted_cf",
+      "actual": -3366358140.009236,
+      "expected": -3366358140.009236,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "discounted_cf",
+      "actual": -3119864703.2961216,
+      "expected": -3119864703.2961216,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "cum_discounted_cf",
+      "actual": -3344108140.009236,
+      "expected": -3344108140.009236,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "cum_discounted_cf",
+      "actual": -6463972843.305357,
+      "expected": -6463972843.305357,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "revenue_eok",
+      "actual": 141.912,
+      "expected": 141.912,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "revenue_eok",
+      "actual": 144.75024,
+      "expected": 144.75024,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "ebitda_eok",
+      "actual": -37.703211168103444,
+      "expected": -37.703211168103444,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "ebitda_eok",
+      "actual": -39.08931563814655,
+      "expected": -39.08931563814655,
+      "difference": 0
+    },
+    {
+      "year": 2027,
+      "field": "cash_flow_eok",
+      "actual": -37.703211168103444,
+      "expected": -37.703211168103444,
+      "difference": 0
+    },
+    {
+      "year": 2028,
+      "field": "cash_flow_eok",
+      "actual": -39.135582838146554,
+      "expected": -39.135582838146554,
+      "difference": 0
+    }
+  ]
+}

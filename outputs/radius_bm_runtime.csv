@@ -1,0 +1,2 @@
+﻿execution_seconds,runtime_limit_seconds,cases,baseline_rows,stochastic_repetitions,workers,seed
+109.09614499999952,2400,8,3,120,8,20261113

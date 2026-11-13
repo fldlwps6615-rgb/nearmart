@@ -1,0 +1,4 @@
+﻿hub_type,area_min_m2,area_max_m2,max_pickers,sku_count,assortment_demand_factor,capex_krw,fixed_staff_fte,fixed_staff_cost_krw_per_month,utilities_krw_per_month,replenish_cost_krw_per_day,launch_marketing_krw
+S,150,330,5,4000,0.92,400000000,3,10000000,3000000,180000,200000000
+M,330,660,10,7000,1.0,650000000,5,15000000,5000000,250000,200000000
+L,660,1000,16,10000,1.05,1000000000,8,24000000,8000000,350000,200000000

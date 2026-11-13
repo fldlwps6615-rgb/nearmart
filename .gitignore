@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+_share/
+_submit/
+src/finance/node_modules/
+report/templates_*/
+.venv/

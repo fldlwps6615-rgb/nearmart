@@ -1,0 +1,1855 @@
+{
+  "version": 1,
+  "feedback": {
+    "network_source": "outputs/network_effective_config.json",
+    "radius_limit_min": 15,
+    "fixed_alternatives": ["A", "B", "B2"],
+    "capacity_fallback": {"15": {"weekday_clear": "weekday_rain"}},
+    "rain_weather": ["rain", "heavy_rain"],
+    "search_workers": 9,
+    "runtime_limit_seconds": 2400
+  },
+  "network": {
+    "staged_expansion": {
+      "initial_alternative": "B",
+      "comparison_alternative": "C",
+      "expansion_years": [2032, 2037, 2042],
+      "expanded_T": 20,
+      "coverage_years": [2027, 2032, 2037]
+    },
+    "search_workers": 4,
+    "alternatives": {
+      "A": {
+        "T": 12,
+        "max_hubs_2027": null
+      },
+      "B": {
+        "T": 15,
+        "max_hubs_2027": null
+      },
+      "C": {
+        "T": 20,
+        "max_hubs_2027": null
+      },
+      "B2": {
+        "T": 15,
+        "max_hubs_2027": 8
+      }
+    },
+    "phases": [
+      2027,
+      2032,
+      2037,
+      2042
+    ],
+    "assignment_years": [
+      2027,
+      2031,
+      2036,
+      2041,
+      2046
+    ],
+    "capacity_per_day": {
+      "S": 640,
+      "M": 1290,
+      "L": 2060
+    },
+    "delivery_base_min": 23,
+    "offpeak_weight": 0.6,
+    "peak_weight": 0.4,
+    "delivery_bin_max": [
+      25,
+      35,
+      45,
+      55
+    ],
+    "delivery_multipliers": [
+      1.12,
+      1.05,
+      1.0,
+      0.85,
+      0.65
+    ],
+    "rider_bin_max": [
+      8,
+      12,
+      15,
+      20
+    ],
+    "rider_cost_2027": [
+      3200,
+      3400,
+      3600,
+      4500,
+      6000
+    ],
+    "picker_cost_2027": 1300,
+    "late_rate": 0.0,
+    "late_demand_penalty": 0.6,
+    "optimization_scenario": "base",
+    "optimization_band": "mid",
+    "scenario_order": [
+      "low",
+      "base",
+      "high"
+    ],
+    "demand_bands": [
+      "low",
+      "mid",
+      "high"
+    ],
+    "seed_sites": [
+      "P1",
+      "C042",
+      "C051",
+      "C015",
+      "C011",
+      "C033",
+      "C064",
+      "C026",
+      "C020",
+      "C036",
+      "C007",
+      "C023",
+      "C016",
+      "C056",
+      "C063",
+      "C038",
+      "C006"
+    ],
+    "key_sites": [
+      "P1",
+      "C042",
+      "C011",
+      "C015",
+      "C033",
+      "C026",
+      "C036",
+      "C064",
+      "C063",
+      "C006",
+      "C038"
+    ],
+    "pilot_inventory_days_observed": 7,
+    "profile_scope": "ALL",
+    "npv_improvement_min_krw": 1.0,
+    "numeric_rtol": 1e-09,
+    "expected_B": {
+      "hubs_2027": 17,
+      "coverage_2027": 0.78,
+      "orders_2027": 10000,
+      "npv_eok_low": -100,
+      "npv_eok_high": 100
+    },
+    "expectation_relative_tolerance": 0.1
+  },
+  "demand": {
+    "tau_days": [
+      40,
+      60,
+      90,
+      120,
+      150
+    ],
+    "a_bounds": [
+      0.0,
+      0.999999
+    ],
+    "rmse_accept_ratio": 1.1,
+    "csv_total_rtol": 1e-09,
+    "last_week_days": 7,
+    "reference_day": 90,
+    "minimum_dong_orders": 50,
+    "prediction_coverage": 0.9,
+    "max_variables": 3,
+    "candidate_variables": [
+      "single_hh_ratio",
+      "age20_39_ratio",
+      "age65_ratio",
+      "apt_hh_ratio",
+      "day_night_pop_ratio",
+      "log_household_density"
+    ],
+    "rain_day_share": 0.0,
+    "w2": false,
+    "w2_start_year": 2030,
+    "competition_radius_km": 2.5,
+    "earth_radius_km": 6371.0088,
+    "base_year": 2026,
+    "forecast_start_year": 2027,
+    "forecast_end_year": 2046,
+    "scenarios": [
+      "low",
+      "base",
+      "high"
+    ],
+    "pilot_hub_type": "M",
+    "delivery_bin_edges": [
+      25,
+      35,
+      45,
+      55
+    ],
+    "delivery_bin_keys": [
+      "0~25분",
+      "25~35분",
+      "35~45분",
+      "45~55분",
+      "55분 초과"
+    ],
+    "expected": {
+      "level_day90": [
+        0.65,
+        0.88
+      ],
+      "mature_div_day90": [
+        1.14,
+        1.32,
+        1.55
+      ],
+      "weekend_factor": 1.1,
+      "rain": 1.15,
+      "heavy_rain": 1.25,
+      "holiday": 0.87,
+      "promotion": 1.2,
+      "P1_orders_per_1000hh": [
+        6.0,
+        7.0
+      ],
+      "P2_orders_per_1000hh": [
+        2.5,
+        3.5
+      ],
+      "seoul_orders_2026": [
+        11000,
+        15000
+      ],
+      "competition_2027": 0.76,
+      "relative_tolerance": 0.1
+    }
+  },
+  "pilot_diagnosis": {
+    "opening_dates": {
+      "P1": "2026-07-06",
+      "P2": "2026-07-20"
+    },
+    "service_radius_km": {
+      "P1": 2.8,
+      "P2": 3.4
+    },
+    "distance_bin_edges_km": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sla_minutes": 60,
+    "contract_min_earnings_krw_per_hour": 17000,
+    "peak_hours": [
+      18,
+      22
+    ],
+    "weather_labels": {
+      "clear": "맑음",
+      "rain": "비",
+      "heavy_rain": "폭우"
+    },
+    "expected": {
+      "avg_delivery_min": 19,
+      "trip_orders": {
+        "P1": 1.2,
+        "P2": 1.0
+      },
+      "rider_earnings": {
+        "P1": 12000,
+        "P2": 5300
+      },
+      "late_rate": 0.003,
+      "late_rain_share": 1,
+      "p1_peak_hourly_orders": 56
+    },
+    "figures_dir": "figures",
+    "font_path": "C:/Windows/Fonts/malgun.ttf"
+  },
+  "paths": {
+    "raw": "data",
+    "clean": "outputs/clean",
+    "outputs": "outputs"
+  },
+  "io": {
+    "encoding": "utf-8-sig",
+    "string_columns": [
+      "adm_cd2",
+      "adm_cd",
+      "site_id",
+      "hub_site_id",
+      "hub_id",
+      "order_id",
+      "rider_id",
+      "trip_id",
+      "comp_hub_id"
+    ],
+    "sectioned_files": [
+      "07_market_scenarios.csv",
+      "12_speed_profile.csv",
+      "14_rider_supply.csv"
+    ]
+  },
+  "cleaning": {
+    "pyeong_to_m2": 3.3058,
+    "hub_area_bins": [
+      150,
+      330,
+      660,
+      1000
+    ],
+    "hub_area_labels": [
+      "S",
+      "M",
+      "L"
+    ],
+    "boundary_policy": "lower_inclusive_upper_exclusive_except_last",
+    "coordinate_bounds": {
+      "lat": [
+        37.4,
+        37.75
+      ],
+      "lon": [
+        126.7,
+        127.2
+      ]
+    },
+    "population_household_limit": 20,
+    "population_divisor": 10,
+    "percent_divisor": 100,
+    "household_average": "mean_of_valid_dong_population_div_households_after_population_fix",
+    "rent_donors": "same_gu_valid_after_deduplication",
+    "excluded_site_ids": [
+      "C069"
+    ],
+    "coordinate_replacement_site_ids": [
+      "C040"
+    ],
+    "duplicate_site_keep": "higher_monthly_rent",
+    "split_statuses": [
+      "TEST",
+      "CANCELLED"
+    ],
+    "external_rider_id": "EXT-QUICK",
+    "timestamp_columns": [
+      "order_ts",
+      "pick_start_ts",
+      "pick_end_ts",
+      "depart_ts",
+      "delivered_ts"
+    ],
+    "timezone_correction_hours": 9,
+    "service_start_min": 540,
+    "service_end_min": 1410,
+    "known_shift_groups": [
+      [
+        "P2",
+        "2026-08-20"
+      ]
+    ],
+    "weight_unresolved_order_ids": [
+      "P1-260917-0285"
+    ],
+    "benchmark_time_tolerance_min": 0.01,
+    "benchmark_calculation_column": "order_min",
+    "benchmark_display_column": "order_time",
+    "benchmark_time_mismatch_expected": 26,
+    "expected_candidate_count": 68,
+    "expected_raw_counts": {
+      "01_SINGLE_NULL": 2,
+      "01_HOUSEHOLDS_NULL": 1,
+      "01_APT_PERCENT": 1,
+      "01_POP_SCALE": 1,
+      "03_PYEONG": 18,
+      "03_OUTSIDE": 1,
+      "03_COORD": 1,
+      "03_DUPLICATE": 2,
+      "03_RENT_NULL": 3,
+      "05_DUPLICATE": 237,
+      "05_TEST": 24,
+      "05_CANCELLED": 1563,
+      "05_COORD": 198,
+      "05_WEIGHT_NEGATIVE": 81,
+      "05_WEIGHT_NULL": 239,
+      "05_DELIVERED_NULL": 778,
+      "05_SHIFT": 1,
+      "16_TIME_MISMATCH": 26
+    }
+  },
+  "analysis": {
+    "scenario": null,
+    "service_T_min": null,
+    "dispatch_policy": null,
+    "financial_parameter_source": "15_cost_parameters.csv",
+    "discount_rate_parameter": "discount_rate"
+  },
+  "files": {
+    "01_dong_master.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "adm_cd2",
+            "adm_cd",
+            "gu",
+            "dong",
+            "lat",
+            "lon",
+            "area_km2",
+            "population_2026",
+            "households_2026",
+            "single_hh_ratio",
+            "age20_39_ratio",
+            "age65_ratio",
+            "apt_hh_ratio",
+            "day_night_pop_ratio",
+            "rider_area_class",
+            "river_side"
+          ],
+          "numeric": [
+            "lat",
+            "lon",
+            "area_km2",
+            "population_2026",
+            "households_2026",
+            "single_hh_ratio",
+            "age20_39_ratio",
+            "age65_ratio",
+            "apt_hh_ratio",
+            "day_night_pop_ratio"
+          ],
+          "optional": [
+            "households_2026",
+            "single_hh_ratio"
+          ],
+          "keys": [
+            "adm_cd2"
+          ],
+          "ranges": {
+            "area_km2": [
+              1e-06,
+              null
+            ],
+            "population_2026": [
+              1e-06,
+              null
+            ],
+            "households_2026": [
+              1e-06,
+              null
+            ],
+            "single_hh_ratio": [
+              0,
+              1
+            ],
+            "age20_39_ratio": [
+              0,
+              1
+            ],
+            "age65_ratio": [
+              0,
+              1
+            ],
+            "apt_hh_ratio": [
+              0,
+              1
+            ],
+            "day_night_pop_ratio": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "rider_area_class": [
+              "A",
+              "B",
+              "C"
+            ],
+            "river_side": [
+              "N",
+              "S"
+            ]
+          }
+        }
+      }
+    },
+    "03_candidate_sites.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "site_id",
+            "status",
+            "gu",
+            "dong",
+            "adm_cd2",
+            "lat",
+            "lon",
+            "floor",
+            "area_value",
+            "area_unit",
+            "monthly_rent_krw",
+            "deposit_krw",
+            "maintenance_krw_per_month",
+            "available_from_year",
+            "bike_bays",
+            "truck_dock",
+            "nonrenewal_prob_at_10y",
+            "lease_start"
+          ],
+          "numeric": [
+            "lat",
+            "lon",
+            "area_value",
+            "monthly_rent_krw",
+            "deposit_krw",
+            "maintenance_krw_per_month",
+            "available_from_year",
+            "bike_bays",
+            "nonrenewal_prob_at_10y"
+          ],
+          "optional": [
+            "lease_start",
+            "adm_cd2",
+            "dong",
+            "monthly_rent_krw"
+          ],
+          "keys": [
+            "site_id"
+          ],
+          "ranges": {
+            "area_value": [
+              1e-06,
+              null
+            ],
+            "monthly_rent_krw": [
+              0,
+              null
+            ],
+            "deposit_krw": [
+              0,
+              null
+            ],
+            "maintenance_krw_per_month": [
+              0,
+              null
+            ],
+            "available_from_year": [
+              1900,
+              2100
+            ],
+            "bike_bays": [
+              0,
+              null
+            ],
+            "nonrenewal_prob_at_10y": [
+              0,
+              1
+            ]
+          },
+          "enums": {
+            "truck_dock": [
+              "Y",
+              "N"
+            ],
+            "floor": [
+              "B1",
+              "1F",
+              "2F"
+            ],
+            "status": [
+              "PILOT",
+              "AVAILABLE"
+            ],
+            "area_unit": [
+              "㎡",
+              "평"
+            ]
+          }
+        }
+      }
+    },
+    "04_hub_types.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "hub_type",
+            "area_min_m2",
+            "area_max_m2",
+            "max_pickers",
+            "sku_count",
+            "assortment_demand_factor",
+            "capex_krw",
+            "fixed_staff_fte",
+            "fixed_staff_cost_krw_per_month",
+            "utilities_krw_per_month",
+            "replenish_cost_krw_per_day",
+            "launch_marketing_krw"
+          ],
+          "numeric": [
+            "area_min_m2",
+            "area_max_m2",
+            "max_pickers",
+            "sku_count",
+            "assortment_demand_factor",
+            "capex_krw",
+            "fixed_staff_fte",
+            "fixed_staff_cost_krw_per_month",
+            "utilities_krw_per_month",
+            "replenish_cost_krw_per_day",
+            "launch_marketing_krw"
+          ],
+          "optional": [],
+          "keys": [
+            "hub_type"
+          ],
+          "ranges": {
+            "area_min_m2": [
+              0,
+              null
+            ],
+            "area_max_m2": [
+              0,
+              null
+            ],
+            "max_pickers": [
+              0,
+              null
+            ],
+            "sku_count": [
+              0,
+              null
+            ],
+            "assortment_demand_factor": [
+              0,
+              null
+            ],
+            "capex_krw": [
+              0,
+              null
+            ],
+            "fixed_staff_fte": [
+              0,
+              null
+            ],
+            "fixed_staff_cost_krw_per_month": [
+              0,
+              null
+            ],
+            "utilities_krw_per_month": [
+              0,
+              null
+            ],
+            "replenish_cost_krw_per_day": [
+              0,
+              null
+            ],
+            "launch_marketing_krw": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "hub_type": [
+              "S",
+              "M",
+              "L"
+            ]
+          }
+        }
+      }
+    },
+    "05_pilot_orders.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "order_id",
+            "hub_id",
+            "order_ts",
+            "adm_cd2",
+            "gu",
+            "dong",
+            "cust_lat",
+            "cust_lon",
+            "building_type",
+            "basket_krw",
+            "items",
+            "weight_kg",
+            "has_chilled",
+            "has_frozen",
+            "delivery_fee_krw",
+            "status",
+            "pick_start_ts",
+            "pick_end_ts",
+            "depart_ts",
+            "delivered_ts",
+            "rider_id",
+            "trip_id",
+            "trip_seq",
+            "rider_pay_alloc_krw",
+            "late_coupon_krw"
+          ],
+          "numeric": [
+            "cust_lat",
+            "cust_lon",
+            "basket_krw",
+            "items",
+            "weight_kg",
+            "has_chilled",
+            "has_frozen",
+            "delivery_fee_krw",
+            "trip_seq",
+            "rider_pay_alloc_krw",
+            "late_coupon_krw"
+          ],
+          "optional": [
+            "weight_kg",
+            "pick_start_ts",
+            "pick_end_ts",
+            "depart_ts",
+            "delivered_ts",
+            "rider_id",
+            "trip_id",
+            "trip_seq",
+            "rider_pay_alloc_krw"
+          ],
+          "keys": [
+            "order_id"
+          ],
+          "ranges": {
+            "basket_krw": [
+              0,
+              null
+            ],
+            "items": [
+              1e-06,
+              null
+            ],
+            "weight_kg": [
+              0,
+              null
+            ],
+            "has_chilled": [
+              0,
+              null
+            ],
+            "has_frozen": [
+              0,
+              null
+            ],
+            "delivery_fee_krw": [
+              0,
+              null
+            ],
+            "trip_seq": [
+              0,
+              null
+            ],
+            "rider_pay_alloc_krw": [
+              0,
+              null
+            ],
+            "late_coupon_krw": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "building_type": [
+              "아파트",
+              "기타"
+            ],
+            "has_chilled": [
+              0,
+              1
+            ],
+            "has_frozen": [
+              0,
+              1
+            ],
+            "status": [
+              "DELIVERED",
+              "TEST",
+              "CANCELLED"
+            ]
+          }
+        }
+      }
+    },
+    "05b_pilot_rider_log.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "date",
+            "hub_id",
+            "rider_id",
+            "login_ts",
+            "logoff_ts",
+            "trips",
+            "orders_delivered",
+            "pay_krw"
+          ],
+          "numeric": [
+            "trips",
+            "orders_delivered",
+            "pay_krw"
+          ],
+          "optional": [],
+          "keys": [
+            "date",
+            "hub_id",
+            "rider_id"
+          ],
+          "ranges": {
+            "trips": [
+              0,
+              null
+            ],
+            "orders_delivered": [
+              0,
+              null
+            ],
+            "pay_krw": [
+              0,
+              null
+            ]
+          },
+          "enums": {}
+        }
+      }
+    },
+    "06_pilot_calendar_weather.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "date",
+            "weekday",
+            "weather",
+            "holiday",
+            "promotion",
+            "rain_mm",
+            "max_temp_c"
+          ],
+          "numeric": [
+            "rain_mm",
+            "max_temp_c"
+          ],
+          "optional": [
+            "holiday",
+            "promotion"
+          ],
+          "keys": [
+            "date"
+          ],
+          "ranges": {
+            "rain_mm": [
+              0,
+              null
+            ],
+            "max_temp_c": [
+              -60,
+              60
+            ]
+          },
+          "enums": {
+            "weather": [
+              "clear",
+              "rain",
+              "heavy_rain",
+              "snow"
+            ],
+            "weekday": [
+              "월",
+              "화",
+              "수",
+              "목",
+              "금",
+              "토",
+              "일"
+            ]
+          }
+        }
+      }
+    },
+    "07_market_scenarios.csv": {
+      "tables": {
+        "[A] 국내 퀵커머스 시장 규모(참고, 조원)": {
+          "columns": [
+            "year",
+            "kind",
+            "market_trillion_krw",
+            "note"
+          ],
+          "numeric": [
+            "year",
+            "market_trillion_krw"
+          ],
+          "optional": [],
+          "keys": [
+            "year"
+          ],
+          "ranges": {
+            "year": [
+              1900,
+              2100
+            ],
+            "market_trillion_krw": [
+              0,
+              null
+            ]
+          },
+          "enums": {}
+        },
+        "[B] 공통 평가 시나리오: 서울 퀵커머스 시장 수요지수(2026=1.00)": {
+          "columns": [
+            "year",
+            "index_low",
+            "index_base",
+            "index_high"
+          ],
+          "numeric": [
+            "year",
+            "index_low",
+            "index_base",
+            "index_high"
+          ],
+          "optional": [],
+          "keys": [
+            "year"
+          ],
+          "ranges": {
+            "year": [
+              1900,
+              2100
+            ],
+            "index_low": [
+              0,
+              null
+            ],
+            "index_base": [
+              0,
+              null
+            ],
+            "index_high": [
+              0,
+              null
+            ]
+          },
+          "enums": {}
+        }
+      }
+    },
+    "08_population_projection.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "gu",
+            "year",
+            "population_index",
+            "households_index",
+            "single_hh_ratio_change_pp"
+          ],
+          "numeric": [
+            "year",
+            "population_index",
+            "households_index",
+            "single_hh_ratio_change_pp"
+          ],
+          "optional": [],
+          "keys": [
+            "gu",
+            "year"
+          ],
+          "ranges": {
+            "year": [
+              1900,
+              2100
+            ],
+            "population_index": [
+              0,
+              null
+            ],
+            "households_index": [
+              0,
+              null
+            ],
+            "single_hh_ratio_change_pp": [
+              -100,
+              100
+            ]
+          },
+          "enums": {}
+        }
+      }
+    },
+    "09_competitor_hubs.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "comp_hub_id",
+            "gu",
+            "dong",
+            "adm_cd2",
+            "lat",
+            "lon",
+            "open_year",
+            "close_year",
+            "competitor"
+          ],
+          "numeric": [
+            "lat",
+            "lon",
+            "open_year",
+            "close_year"
+          ],
+          "optional": [
+            "close_year"
+          ],
+          "keys": [
+            "comp_hub_id"
+          ],
+          "ranges": {
+            "open_year": [
+              1900,
+              2100
+            ],
+            "close_year": [
+              1900,
+              2100
+            ]
+          },
+          "enums": {
+            "competitor": [
+              "A",
+              "B(what-if)"
+            ]
+          }
+        }
+      }
+    },
+    "10_market_rules.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "rule",
+            "key",
+            "value",
+            "unit",
+            "note"
+          ],
+          "numeric": [
+            "value"
+          ],
+          "optional": [
+            "value",
+            "unit",
+            "note"
+          ],
+          "keys": [
+            "rule",
+            "key"
+          ],
+          "ranges": {
+            "value": [
+              0,
+              null
+            ]
+          },
+          "enums": {}
+        }
+      }
+    },
+    "11_bridges.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "bridge",
+            "lat",
+            "lon",
+            "motorcycle_allowed"
+          ],
+          "numeric": [
+            "lat",
+            "lon"
+          ],
+          "optional": [],
+          "keys": [
+            "bridge"
+          ],
+          "ranges": {},
+          "enums": {
+            "motorcycle_allowed": [
+              true,
+              false
+            ]
+          }
+        }
+      }
+    },
+    "12_speed_profile.csv": {
+      "tables": {
+        "[A] 시간대별 이륜차 기본속도": {
+          "columns": [
+            "hour",
+            "base_speed_kmh"
+          ],
+          "numeric": [
+            "hour",
+            "base_speed_kmh"
+          ],
+          "optional": [],
+          "keys": [
+            "hour"
+          ],
+          "ranges": {
+            "hour": [
+              0,
+              24
+            ],
+            "base_speed_kmh": [
+              0,
+              null
+            ]
+          },
+          "enums": {}
+        },
+        "[B] 자치구 지역계수(출발·도착 평균 적용)": {
+          "columns": [
+            "gu",
+            "gu_speed_factor"
+          ],
+          "numeric": [
+            "gu_speed_factor"
+          ],
+          "optional": [],
+          "keys": [
+            "gu"
+          ],
+          "ranges": {
+            "gu_speed_factor": [
+              0,
+              null
+            ]
+          },
+          "enums": {}
+        },
+        "[C] 기상 계수": {
+          "columns": [
+            "weather",
+            "weather_speed_factor"
+          ],
+          "numeric": [
+            "weather_speed_factor"
+          ],
+          "optional": [],
+          "keys": [
+            "weather"
+          ],
+          "ranges": {
+            "weather_speed_factor": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "weather": [
+              "clear",
+              "rain",
+              "heavy_rain",
+              "snow"
+            ]
+          }
+        }
+      }
+    },
+    "13_od_site_dong.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "site_id",
+            "adm_cd2",
+            "straight_km",
+            "road_km",
+            "time_offpeak_min",
+            "time_peak_min"
+          ],
+          "numeric": [
+            "straight_km",
+            "road_km",
+            "time_offpeak_min",
+            "time_peak_min"
+          ],
+          "optional": [],
+          "keys": [
+            "site_id",
+            "adm_cd2"
+          ],
+          "ranges": {
+            "straight_km": [
+              0,
+              null
+            ],
+            "road_km": [
+              0,
+              null
+            ],
+            "time_offpeak_min": [
+              0,
+              null
+            ],
+            "time_peak_min": [
+              0,
+              null
+            ]
+          },
+          "enums": {}
+        }
+      }
+    },
+    "14_rider_supply.csv": {
+      "tables": {
+        "[A] 위탁 라이더 시간대별 거점당 최대 동시 접속 인원(권역 등급: 01_dong_master/자치구 기준)": {
+          "columns": [
+            "area_class",
+            "hour_from",
+            "hour_to",
+            "max_contract_riders_per_hub"
+          ],
+          "numeric": [
+            "hour_from",
+            "hour_to",
+            "max_contract_riders_per_hub"
+          ],
+          "optional": [],
+          "keys": [
+            "area_class",
+            "hour_from",
+            "hour_to"
+          ],
+          "ranges": {
+            "hour_from": [
+              0,
+              24
+            ],
+            "hour_to": [
+              0,
+              24
+            ],
+            "max_contract_riders_per_hub": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "area_class": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        },
+        "[B] 기상별 공급 계수(내림 처리)": {
+          "columns": [
+            "weather",
+            "cap_multiplier"
+          ],
+          "numeric": [
+            "cap_multiplier"
+          ],
+          "optional": [],
+          "keys": [
+            "weather"
+          ],
+          "ranges": {
+            "cap_multiplier": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "weather": [
+              "clear",
+              "rain",
+              "heavy_rain",
+              "snow"
+            ]
+          }
+        }
+      }
+    },
+    "15_cost_parameters.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "category",
+            "parameter",
+            "value",
+            "unit",
+            "description"
+          ],
+          "numeric": [],
+          "optional": [
+            "unit",
+            "description"
+          ],
+          "keys": [
+            "category",
+            "parameter"
+          ],
+          "ranges": {},
+          "enums": {}
+        }
+      }
+    },
+    "16_vrp_benchmark_orders.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "instance",
+            "order_id",
+            "order_time",
+            "order_min",
+            "adm_cd2",
+            "gu",
+            "cust_lat",
+            "cust_lon",
+            "building_type",
+            "basket_krw",
+            "items",
+            "weight_kg",
+            "has_chilled",
+            "has_frozen",
+            "delivery_fee_krw",
+            "pick_std_min"
+          ],
+          "numeric": [
+            "order_min",
+            "cust_lat",
+            "cust_lon",
+            "basket_krw",
+            "items",
+            "weight_kg",
+            "has_chilled",
+            "has_frozen",
+            "delivery_fee_krw",
+            "pick_std_min"
+          ],
+          "optional": [],
+          "keys": [
+            "instance",
+            "order_id"
+          ],
+          "ranges": {
+            "order_min": [
+              0,
+              null
+            ],
+            "basket_krw": [
+              0,
+              null
+            ],
+            "items": [
+              1e-06,
+              null
+            ],
+            "weight_kg": [
+              0,
+              null
+            ],
+            "has_chilled": [
+              0,
+              null
+            ],
+            "has_frozen": [
+              0,
+              null
+            ],
+            "delivery_fee_krw": [
+              0,
+              null
+            ],
+            "pick_std_min": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "building_type": [
+              "아파트",
+              "기타"
+            ],
+            "has_chilled": [
+              0,
+              1
+            ],
+            "has_frozen": [
+              0,
+              1
+            ]
+          }
+        }
+      }
+    },
+    "16b_vrp_benchmark_meta.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "instance",
+            "hub_site_id",
+            "hub_lat",
+            "hub_lon",
+            "hub_gu",
+            "hub_type",
+            "rider_area_class",
+            "weather",
+            "description",
+            "service_radius_road_km",
+            "n_orders"
+          ],
+          "numeric": [
+            "hub_lat",
+            "hub_lon",
+            "service_radius_road_km",
+            "n_orders"
+          ],
+          "optional": [],
+          "keys": [
+            "instance"
+          ],
+          "ranges": {
+            "service_radius_road_km": [
+              0,
+              null
+            ],
+            "n_orders": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "rider_area_class": [
+              "A",
+              "B",
+              "C"
+            ],
+            "hub_type": [
+              "S",
+              "M",
+              "L"
+            ],
+            "weather": [
+              "clear",
+              "rain",
+              "heavy_rain",
+              "snow"
+            ]
+          }
+        }
+      }
+    },
+    "17_travel_time_check.csv": {
+      "tables": {
+        "main": {
+          "columns": [
+            "case_id",
+            "from_lat",
+            "from_lon",
+            "from_gu",
+            "to_lat",
+            "to_lon",
+            "to_gu",
+            "depart_hour",
+            "weather",
+            "straight_km",
+            "cross_river",
+            "bridge_used",
+            "road_km",
+            "speed_kmh",
+            "travel_min"
+          ],
+          "numeric": [
+            "from_lat",
+            "from_lon",
+            "to_lat",
+            "to_lon",
+            "depart_hour",
+            "straight_km",
+            "road_km",
+            "speed_kmh",
+            "travel_min"
+          ],
+          "optional": [
+            "bridge_used"
+          ],
+          "keys": [
+            "case_id"
+          ],
+          "ranges": {
+            "depart_hour": [
+              0,
+              24
+            ],
+            "straight_km": [
+              0,
+              null
+            ],
+            "road_km": [
+              0,
+              null
+            ],
+            "speed_kmh": [
+              0,
+              null
+            ],
+            "travel_min": [
+              0,
+              null
+            ]
+          },
+          "enums": {
+            "weather": [
+              "clear",
+              "rain",
+              "heavy_rain",
+              "snow"
+            ],
+            "cross_river": [
+              "Y",
+              "N"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "finance": {
+    "scenarios": [
+      "low",
+      "base",
+      "high"
+    ],
+    "default_scenario": "base",
+    "discount_rate": "discount_rate",
+    "nonrenewal_mode": "expected",
+    "forced_relocations": [],
+    "maintenance_growth": "utilities_growth",
+    "it_growth": 0.0,
+    "coupon_growth": 0.0,
+    "quick_growth": 0.0,
+    "renewal_15y_increase": "renewal_rent_increase_cap",
+    "refresh_timing": "year_end",
+    "pilot_refresh_basis": "sunk_zero",
+    "skip_refresh_when_closing": true,
+    "deduct_unamortized_book_value_on_close": false,
+    "inventory_initial_timing": "operating_year_end",
+    "close_year_convention": "first_inactive_year",
+    "demand_basis": "scenario_applied",
+    "allow_early_open_for_stress_test": false,
+    "days_per_year": 365,
+    "months_per_year": 12,
+    "krw_per_eok": 100000000,
+    "issues_log_path": "outputs/data_issues_log.csv",
+    "validation": {
+      "orders_per_day": 900,
+      "avg_basket_krw": 42000,
+      "under_40000_share": 0.4,
+      "cold_order_share": 0.45,
+      "late_rate": 0.05,
+      "external_quick_share": 0.01,
+      "contract_order_share": 0.8,
+      "employed_order_share": 0.19,
+      "batch_size": 2,
+      "items_per_order": 12,
+      "employed_minutes_per_order": 6,
+      "fte_hours_per_month": 174,
+      "minutes_per_hour": 60,
+      "sensitivity_discount_rate": 0.16,
+      "benchmark_repetitions": 300,
+      "performance_target_seconds": 0.1
+    }
+  },
+  "dispatch": {
+    "sla_min": 60,
+    "min_contract_hourly_krw": 17860,
+    "max_pickers": 10,
+    "fte_hours_per_month": 174,
+    "open_hour": 9,
+    "last_order_min": 1410,
+    "planning_end_hour": 48,
+    "tail_pickers": 2,
+    "p0_max_orders": 3,
+    "p0_radius_km": 1.2,
+    "candidate_neighbors": 16,
+    "min_contract_riders": 1,
+    "staffing_intercustomer_min": 2.0,
+    "search": {
+      "seconds_per_instance": 600,
+      "progress_interval_sec": 30,
+      "shuffle_seed": 20261113,
+      "max_coarse_candidates": 144,
+      "refine_top": 3,
+      "reduction_sweeps": 2,
+      "coarse_wait": [
+        4,
+        8,
+        12
+      ],
+      "coarse_target": [
+        3,
+        4,
+        5
+      ],
+      "coarse_margin": [
+        2,
+        5
+      ],
+      "coarse_picker_factor": [
+        1.05,
+        1.2
+      ],
+      "coarse_rider_factor": [
+        0.85,
+        1.05,
+        1.4
+      ],
+      "coarse_tail": [
+        2,
+        4
+      ],
+      "coarse_blocks": [
+        [],
+        [
+          {
+            "start_hour": 21,
+            "hours": 4,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "start_hour": 21,
+            "hours": 4,
+            "count": 4
+          }
+        ],
+        [
+          {
+            "start_hour": 21,
+            "hours": 4,
+            "count": 6
+          }
+        ],
+        [
+          {
+            "start_hour": 18,
+            "hours": 8,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "start_hour": 17,
+            "hours": 4,
+            "count": 2
+          },
+          {
+            "start_hour": 21,
+            "hours": 4,
+            "count": 4
+          }
+        ],
+        [
+          {
+            "start_hour": 10,
+            "hours": 8,
+            "count": 3
+          },
+          {
+            "start_hour": 17,
+            "hours": 8,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "start_hour": 10,
+            "hours": 8,
+            "count": 4
+          },
+          {
+            "start_hour": 17,
+            "hours": 8,
+            "count": 4
+          }
+        ],
+        [
+          {
+            "start_hour": 10,
+            "hours": 8,
+            "count": 5
+          },
+          {
+            "start_hour": 17,
+            "hours": 8,
+            "count": 5
+          }
+        ]
+      ],
+      "fine_wait_delta": [
+        -2,
+        2
+      ],
+      "fine_margin_delta": [
+        -1,
+        1
+      ],
+      "fine_hour_wait_step": 2,
+      "anchor_candidates": [
+        {
+          "wait": 8,
+          "target": 5,
+          "margin": 2,
+          "picker_factor": 1.05,
+          "rider_factor": 1.4,
+          "blocks": [
+            {
+              "start_hour": 10,
+              "hours": 8,
+              "count": 3
+            },
+            {
+              "start_hour": 17,
+              "hours": 8,
+              "count": 3
+            }
+          ],
+          "tail": 2
+        }
+      ],
+      "baseline_plans": {
+        "P0": {
+          "wait": 0,
+          "target": 3,
+          "margin": 0,
+          "picker_factor": 1.15,
+          "rider_factor": 1.0,
+          "blocks": [],
+          "tail": 2
+        },
+        "P1": {
+          "wait": 8,
+          "target": 5,
+          "margin": 3,
+          "picker_factor": 1.15,
+          "rider_factor": 1.0,
+          "blocks": [],
+          "tail": 2
+        }
+      }
+    },
+    "verification_tolerance": 1e-06,
+    "expected_solo_mean_min": {
+      "BM1": 14.5,
+      "BM2": 18.7,
+      "BM3": 15.0
+    },
+    "expected_solo_max_min": {
+      "BM1": 26.4,
+      "BM2": 30.2,
+      "BM3": 24.8
+    },
+    "refinement_end_hour": 26,
+    "shutdown_after_completion": true
+  },
+  "sim": {
+    "seed": 20261113,
+    "repetitions": 20,
+    "ontime_target": 0.95,
+    "radius_bm": {
+      "instances": {
+        "BM1": {"day_type": "weekday_clear", "radius_min": [12, 15, 20]},
+        "BM2": {"day_type": "weekend_clear", "radius_min": [12, 15, 20]},
+        "BM3": {"day_type": "weekday_rain", "radius_min": [15, 20]}
+      },
+      "decision_instance": "BM3",
+      "policy": "P2",
+      "min_contract_hourly_krw": 17860,
+      "search_seconds_per_case": 300,
+      "runtime_limit_seconds": 2400,
+      "workers": 8,
+      "cost_tolerance_krw": 0.01
+    },
+    "radius_bm_v2": {
+      "required_instances": ["BM2", "BM3"],
+      "optional_instances": ["BM1"],
+      "order_levels": [1.0, 0.8, 0.6],
+      "radius_min": [12, 15, 20],
+      "training_repetitions": 5,
+      "runtime_limit_seconds": 1800,
+      "search_seconds_per_case": 270,
+      "publish_reserve_seconds": 20,
+      "workers": 8,
+      "initial_candidates": 40,
+      "refinement_candidates": 26
+    },
+    "runtime_limit_sec": 1800,
+    "replay": {
+      "hubs": ["P1", "P2"],
+      "day_type": "weekday",
+      "weather": "clear",
+      "policy": "P0",
+      "fee_base_year": 2027
+    },
+    "pick_items_cap": 40,
+    "experiment": {
+      "year": 2027,
+      "rider_classes": ["A", "B", "C"],
+      "order_levels": [0.4, 0.6, 0.8, 1.0, 1.2],
+      "radius_min": [8, 12, 15, 20],
+      "reduced_order_levels": [0.6, 1.0],
+      "reduced_radius_min": [12, 15],
+      "days": {
+        "weekday_clear": {"day": "weekday", "weather": "clear", "benchmark": "BM1"},
+        "weekend_clear": {"day": "weekend", "weather": "clear", "benchmark": "BM2"},
+        "weekday_rain": {"day": "weekday", "weather": "rain", "benchmark": "BM3"}
+      },
+      "peak_hour": 18,
+      "travel_bin_edges": [0, 4, 8, 12, 15, 20],
+      "correction_mean_min": 1.2,
+      "correction_p90_min": 2.7,
+      "workers": 8,
+      "location_candidates": 4096,
+      "picker_buffer": 1.1,
+      "rider_load_factors": [1.0, 1.16, 0.82],
+      "contract_load_factors": [1.0, 0.5, 0.0],
+      "contract_income_buffer": 0.90,
+      "pilot_candidates": 4,
+      "search_target": 0.97,
+      "staffing_search": {
+        "min_trials": 12,
+        "max_trials": 36,
+        "planning_days": 3,
+        "supply_buffer": 1.05
+      },
+      "consistency": {
+        "seed": 20261113,
+        "day_type": "weekend_clear",
+        "min_raw_ontime": 0.97,
+        "min_cost_krw": 4231,
+        "max_cost_krw": 6347,
+        "max_bike_bays": 13,
+        "min_contract_hourly_krw": 17860
+      },
+      "expectations": {
+        "m_capacity": [1000, 1300],
+        "cost_comparison_order_level": 0.8,
+        "rider_cost_short_krw": 3300,
+        "rider_cost_long_min_krw": 4000
+      }
+    }
+  }
+}

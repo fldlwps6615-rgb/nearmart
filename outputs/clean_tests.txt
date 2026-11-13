@@ -1,0 +1,15 @@
+test_approved_exceptions (src.clean.test_checks.CleanChecks.test_approved_exceptions) ... ok
+test_area_boundaries (src.clean.test_checks.CleanChecks.test_area_boundaries) ... ok
+test_candidates_coordinates_and_od (src.clean.test_checks.CleanChecks.test_candidates_coordinates_and_od) ... ok
+test_default_source_and_raw_guard (src.clean.test_checks.CleanChecks.test_default_source_and_raw_guard) ... ok
+test_new_defects_and_removed_flags_fail_validation (src.clean.test_checks.CleanChecks.test_new_defects_and_removed_flags_fail_validation) ... ok
+test_order_partition_and_financial_conservation (src.clean.test_checks.CleanChecks.test_order_partition_and_financial_conservation) ... ok
+test_rowcount_log_balance (src.clean.test_checks.CleanChecks.test_rowcount_log_balance) ... ok
+test_sectioned_leading_zero_identifiers (src.clean.test_checks.CleanChecks.test_sectioned_leading_zero_identifiers) ... ok
+test_source_hashes (src.clean.test_checks.CleanChecks.test_source_hashes) ... ok
+test_timestamp_shift_all_columns (src.clean.test_checks.CleanChecks.test_timestamp_shift_all_columns) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.496s
+
+OK

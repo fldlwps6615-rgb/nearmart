@@ -1,0 +1,9 @@
+{
+  "shuffled_plan_and_ops_invariant": true,
+  "scenario_index_ratios": {
+    "low": 1.0497,
+    "base": 1.065,
+    "high": 1.095
+  },
+  "refresh_year_start_cash_2035_and_depreciation_2036": true
+}

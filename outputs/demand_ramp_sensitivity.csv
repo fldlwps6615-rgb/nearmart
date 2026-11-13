@@ -1,0 +1,10 @@
+﻿metric,value,unit
+fitted_mature_div_day90,1.4204432153092883,배
+prior_mature_div_day90,1.32,배
+same_day90_anchor,10634.388985159885,건/일
+with_prior_ramp,14037.39346041105,건/일
+with_fitted_ramp,15105.545682930187,건/일
+fitted_minus_prior,1068.1522225191384,건/일
+expected_upper,15000.0,건/일
+prior_minus_upper,-962.6065395889509,건/일
+fitted_minus_upper,105.54568293018747,건/일

@@ -1,0 +1,2 @@
+﻿execution_seconds,runtime_limit_seconds,scheduled_cases,finished_cases,trained_cases,passed_cases,workers,stopped_at_limit,unfinished_cases,protected_hashes,evaluated_candidates
+494.295882800001,1800,36,36,18,11,8,False,0,117,2355

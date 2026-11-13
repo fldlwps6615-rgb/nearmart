@@ -1,0 +1,74 @@
+{
+  "a": {
+    "scenario": "base",
+    "npv": -49654801112.14037,
+    "npv_eok": -496.54801112140376,
+    "max_funding": 147772809689.39258,
+    "max_funding_eok": 1477.7280968939258,
+    "funding_limit": 50000000000.0,
+    "funding_within_limit": false,
+    "payback_year": 2026,
+    "ebitda_positive_year": "미전환",
+    "discount_rate": 0.12,
+    "hq_npv_eok": -496.69051112140363,
+    "pilot_withdrawal_eok": 0.1425
+  },
+  "b": {
+    "scenario": "base",
+    "npv": -35616712406.83182,
+    "npv_eok": -356.1671240683182,
+    "max_funding": 108252035961.01323,
+    "max_funding_eok": 1082.5203596101323,
+    "funding_limit": 50000000000.0,
+    "funding_within_limit": false,
+    "payback_year": 2026,
+    "ebitda_positive_year": "미전환",
+    "discount_rate": 0.12,
+    "workbook_check": "pending until build_check.mjs runs"
+  },
+  "c": {
+    "npv_12_eok": 5245.288881352944,
+    "npv_16_eok": 4002.5246018018793,
+    "sites": 58
+  },
+  "d": {
+    "deposit_returned": 55000000.0,
+    "inventory_recovery": 269610295.5263127,
+    "restoration": 63000000.0
+  },
+  "e": {
+    "site_id": "C001",
+    "factor": 1.1040808032
+  },
+  "f": {
+    "scenario": "base",
+    "npv": 625652584829.3978,
+    "npv_eok": 6256.525848293978,
+    "max_funding": 46073000000.0,
+    "max_funding_eok": 460.73,
+    "funding_limit": 50000000000.0,
+    "funding_within_limit": true,
+    "payback_year": 2027,
+    "ebitda_positive_year": 2027,
+    "discount_rate": 0.12,
+    "sites": 68,
+    "early_open_sites": 10,
+    "note": "전 후보지 2027년 개점 스트레스 검산. 입주 가능 연도만 해제한 비실행 계획; 임시 하루 900건/거점."
+  },
+  "terminal_writeoff": {
+    "residual_book_value": 88326464.25599998,
+    "tax_saving_if_elected": 19431822.136319995
+  },
+  "timing": {
+    "calls": 300,
+    "sites": 68,
+    "ops_rows": 1360,
+    "mean_seconds": 0.05166193726668401,
+    "p95_seconds": 0.07322750045041176,
+    "max_seconds": 0.15646310299962352,
+    "target_seconds": 0.1,
+    "all_calls_within_target": false
+  },
+  "checks_passed": 47,
+  "source_files_unchanged": 24
+}

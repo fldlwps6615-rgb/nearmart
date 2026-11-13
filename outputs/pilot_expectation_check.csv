@@ -1,0 +1,9 @@
+﻿hub_id,metric,segment,expected,actual,actual_minus_expected,pooled_actual,interpretation
+ALL,avg_delivery_min,all,19.0,19.099641367227814,0.09964136722781447,,60분 약속 대상의 주문별 가중 평균
+P1,orders_per_trip,all,1.2,1.1883604768300873,-0.01163952316991268,,거점·영업일·라이더·트립 ID 기준
+P1,rider_earnings_krw_per_hour,all,12000.0,12088.779111856658,88.77911185665835,11692.953025391977,기대값에 가까운 거점·일 시급의 단순평균. pooled_actual은 기간 전체 지급액 합 ÷ 접속시간 합
+P2,orders_per_trip,all,1.0,1.0108199086318828,0.010819908631882758,,거점·영업일·라이더·트립 ID 기준
+P2,rider_earnings_krw_per_hour,all,5300.0,5323.712820236904,23.712820236904008,5157.330190286302,기대값에 가까운 거점·일 시급의 단순평균. pooled_actual은 기간 전체 지급액 합 ÷ 접속시간 합
+ALL,late_rate,all,0.003,0.0027710561236437437,-0.00022894387635625634,,지연 건수 ÷ 배송 KPI 대상 건수
+ALL,late_order_share,weather=rain_or_heavy_rain,1.0,1.0,0.0,,비·폭우 지연 건수 ÷ 전체 지연 건수
+P1,orders_per_hour,peak,56.0,56.60164835164835,0.6016483516483504,,18시 이상 22시 미만 접수 주문 수 ÷ (운영일 × 4시간)

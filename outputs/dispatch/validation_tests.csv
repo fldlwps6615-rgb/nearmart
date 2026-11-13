@@ -1,0 +1,14 @@
+﻿test,expected_failure,detected,failures
+중복 주문,a,True,a
+누락 주문,a,True,a
+구간 전달시각 변조,f,True,f|i
+피킹 표준시간 변조,h,True,g_staffing|h
+트립 순번 변조,c,True,c|derived_logs|f|i
+시간별 접속인원 변조,d,True,d|hours
+복귀 전 로그아웃,work,True,d|derived_logs|hours|i|work
+트립 지급액 로그 변조,derived_logs,True,derived_logs
+보고 KPI 비용 변조,i,True,i
+외부 퀵 완료시각 모형 누락 거부,external_model_required,True,expected_error
+외부 퀵 비용·쿠폰·정시율 제외,none,True,
+18시 경계 실제 출발·비 할증 합산,none,True,
+BM3 공급 내림·자정 연장·속도 0.88,none,True,

@@ -1,0 +1,19 @@
+﻿rule_id,file,check,n_rows,example,action
+FIN_OPS_COVERAGE,ops,ops는 실제 영업 거점×연도와 정확히 일치해야 합니다.,1,"누락=[('P1', 2046)], 초과=[]",STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_KEY,ops,"ops 연도는 정수, 거점×연도는 유일해야 합니다.",1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_VALUE,ops,ops 필수 숫자 결측/비유한값/음수,20,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_RATIO,ops,ops 비율은 0~1이어야 합니다.,1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_VALUE,ops,ops 필수 숫자 결측/비유한값/음수,20,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_AVAILABILITY,plan,C009: 입주 가능 연도 이전 개점,1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_COVERAGE,ops,ops는 실제 영업 거점×연도와 정확히 일치해야 합니다.,1,"누락=[('P1', 2046)], 초과=[]",STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_KEY,ops,"ops 연도는 정수, 거점×연도는 유일해야 합니다.",1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_VALUE,ops,ops 필수 숫자 결측/비유한값/음수,20,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_RATIO,ops,ops 비율은 0~1이어야 합니다.,1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_VALUE,ops,ops 필수 숫자 결측/비유한값/음수,20,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_AVAILABILITY,plan,C009: 입주 가능 연도 이전 개점,1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_COVERAGE,ops,ops는 실제 영업 거점×연도와 정확히 일치해야 합니다.,1,"누락=[('P1', 2046)], 초과=[]",STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_KEY,ops,"ops 연도는 정수, 거점×연도는 유일해야 합니다.",1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_VALUE,ops,ops 필수 숫자 결측/비유한값/음수,20,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_RATIO,ops,ops 비율은 0~1이어야 합니다.,1,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_OPS_VALUE,ops,ops 필수 숫자 결측/비유한값/음수,20,,STOP | 입력 수정 필요; 보간·삭제 안 함
+FIN_AVAILABILITY,plan,C009: 입주 가능 연도 이전 개점,1,,STOP | 입력 수정 필요; 보간·삭제 안 함
